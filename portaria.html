@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portaria RFB 632/2025 – Autorregularização eSocial e PGD-C – TECAP</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #0b1a2e; }
+
+    /* Cores personalizadas - padrão TECAP */
+    :root {
+      --tecap-dark: rgb(47, 50, 98);
+      --tecap-primary: rgb(50, 54, 104);
+      --tecap-light: #eef0f7;
+      --tecap-gray: #f1f5f9;
+      --tecap-text: #0b1a2e;
+      --tecap-white: #ffffff;
+    }
+
+    .bg-tecap-dark { background: rgb(47, 50, 98); }
+    .bg-tecap-primary { background: rgb(50, 54, 104); }
+    .bg-tecap-light { background: #eef0f7; }
+    .bg-tecap-gray { background: #f1f5f9; }
+    .text-tecap-dark { color: rgb(47, 50, 98); }
+    .text-tecap-primary { color: rgb(50, 54, 104); }
+
+    .btn-tecap { 
+      background: rgb(50, 54, 104); 
+      color: #fff; 
+      border-radius: 50px; 
+      padding: 0.6rem 1.8rem; 
+      font-weight: 600; 
+      transition: 0.3s; 
+      border: none; 
+    }
+    .btn-tecap:hover { background: rgb(35, 38, 75); color: #fff; transform: scale(1.02); }
+    .btn-outline-tecap {
+      border: 2px solid rgb(50, 54, 104);
+      color: rgb(50, 54, 104);
+      border-radius: 50px;
+      padding: 0.6rem 1.8rem;
+      font-weight: 600;
+      transition: 0.3s;
+      background: transparent;
+    }
+    .btn-outline-tecap:hover { background: rgb(50, 54, 104); color: #fff; }
+
+    .navbar-tecap { background: rgba(47, 50, 98, 0.95) !important; backdrop-filter: blur(8px); }
+    .navbar-tecap .nav-link { color: rgba(255,255,255,0.8) !important; font-weight: 500; }
+    .navbar-tecap .nav-link:hover { color: #fff !important; }
+    .navbar-tecap .nav-link.active { color: #fff !important; background: rgba(255,255,255,0.12); border-radius: 30px; }
+
+    .section-padding { padding: 3rem 0; }
+
+    .card-conteudo {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(47,50,98,0.06);
+      border: 1px solid rgba(50,54,104,0.06);
+      margin-bottom: 1.5rem;
+    }
+
+    .passo-item {
+      background: #f8fafc;
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+      border-left: 4px solid rgb(50, 54, 104);
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 10px 16px;
+      background: #f8fafc;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      border-left: 4px solid rgb(50, 54, 104);
+    }
+    .timeline-item .data { font-weight: 700; color: rgb(50, 54, 104); margin-left: auto; white-space: nowrap; }
+
+    .badge-tecap {
+      background: rgba(50, 54, 104, 0.10);
+      color: rgb(50, 54, 104);
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    .badge-tecap-white {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .hero-tecap {
+      background: linear-gradient(145deg, rgb(47, 50, 98) 0%, rgb(50, 54, 104) 100%);
+      color: white;
+      padding: 4rem 0 3rem;
+      margin-top: 68px;
+    }
+
+    .footer-tecap { background: rgb(47, 50, 98); color: #fff; padding: 2.5rem 0 1.5rem; }
+
+    @media (max-width: 768px) {
+      .hero-tecap { padding: 2.5rem 0; margin-top: 60px; }
+      .section-padding { padding: 2rem 0; }
+      .timeline-item { flex-wrap: wrap; }
+      .timeline-item .data { width: 100%; margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-tecap fixed-top py-2">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-white fs-4" href="#">TECAP</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#conteudo">Conteúdo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cronograma">Cronograma</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+        <a href="#contato" class="btn btn-tecap btn-sm px-4">Quero Conhecer</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero-tecap">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-9">
+          <span class="badge-tecap-white mb-2 d-inline-block">Portaria RFB 632/2025</span>
+          <h1 class="display-5 fw-bold">Autorregularização eSocial e PGD-C</h1>
+          <p class="lead" style="color: rgba(255,255,255,0.85);">
+            A Receita Federal Publicou a Portaria nº 632/2025 que trata da Autorregularização dos órgãos e entidades públicas em relação ao eSocial e a contingência criada em substituição a DIRF ano calendário 2025.
+          </p>
+          <a href="#cronograma" class="btn btn-tecap">Ver Cronograma</a>
+          <a href="#contato" class="btn btn-outline-light ms-2">Fale Conosco</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <section id="conteudo" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="card-conteudo">
+            <span class="badge-tecap mb-3 d-inline-block">O que você precisa saber</span>
+            <h2 class="text-tecap-dark">Passo a passo do Programa de Autorregularização</h2>
+            
+            <p class="mt-3">A consolidação do eSocial como principal base de informações trabalhistas, previdenciárias e fiscais trouxe avanços importantes para a administração pública, mas também exigiu dos órgãos públicos uma adaptação significativa aos novos fluxos, prazos e padrões de informação.</p>
+            
+            <p>Com o objetivo de apoiar os órgãos públicos nesse momento de ajuste e promover a conformidade das informações prestadas, a Receita Federal do Brasil editou a <strong>Portaria RFB nº 632, de 30 de dezembro de 2025</strong>, que instituiu o Programa Receita Social Autorregularização.</p>
+
+            <div class="mt-4">
+              <div class="passo-item">
+                <h6 class="text-tecap-primary"><i class="bi bi-check-circle-fill me-2"></i>1. Verificação da elegibilidade</h6>
+                <p class="mb-0 small">Destinado a <strong>órgãos públicos federais, estaduais, distritais e municipais</strong> que enfrentam dificuldades no cumprimento das obrigações acessórias.</p>
+              </div>
+              <div class="passo-item">
+                <h6 class="text-tecap-primary"><i class="bi bi-check-circle-fill me-2"></i>2. Adesão ao DTE</h6>
+                <p class="mb-0 small">A adesão ao <strong>Domicílio Tributário Eletrônico (DTE)</strong> é condição prévia obrigatória para comunicação com a Receita Federal.</p>
+              </div>
+              <div class="passo-item">
+                <h6 class="text-tecap-primary"><i class="bi bi-check-circle-fill me-2"></i>3. Formalização da adesão</h6>
+                <p class="mb-0 small"><i class="bi bi-calendar-event me-1"></i> <strong>Prazo: até 20 de fevereiro de 2026</strong> – Abrir processo no e-CAC, formalizar o Termo de Adesão e aceitar o Termo de Compromisso.</p>
+              </div>
+              <div class="passo-item">
+                <h6 class="text-tecap-primary"><i class="bi bi-check-circle-fill me-2"></i>4. Envio pelo PGD-C</h6>
+                <p class="mb-0 small">Utilizar o <strong>Programa Gerador de Declaração de Contingência (PGD-C)</strong> para transmitir informações do ano-calendário 2025 (substituindo a DIRF).</p>
+              </div>
+              <div class="passo-item">
+                <h6 class="text-tecap-primary"><i class="bi bi-check-circle-fill me-2"></i>5. Plano de Ação</h6>
+                <p class="mb-0 small"><i class="bi bi-calendar-event me-1"></i> <strong>Prazo: até 31 de março de 2026</strong> – Descrição das dificuldades, ações de conformidade e cronograma de execução.</p>
+              </div>
+              <div class="passo-item">
+                <h6 class="text-tecap-primary"><i class="bi bi-check-circle-fill me-2"></i>6. Autorregularização no eSocial</h6>
+                <p class="mb-0 small"><i class="bi bi-calendar-event me-1"></i> <strong>Prazo final: até 30 de setembro de 2026</strong> – Corrigir inconsistências, transmitir eventos pendentes e alcançar a conformidade.</p>
+              </div>
+            </div>
+
+            <div class="mt-4 p-3 bg-tecap-light rounded-3">
+              <h6 class="text-tecap-primary"><i class="bi bi-shield-check me-2"></i>Benefícios após a conformidade</h6>
+              <ul class="small mb-0">
+                <li>Afastamento das multas por atraso no envio das informações do eSocial</li>
+                <li>Afastamento da multa de ofício prevista no art. 44 da Lei nº 9.430/1996</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRONOGRAMA -->
+  <section id="cronograma" class="section-padding bg-tecap-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="text-center mb-4">
+            <span class="badge-tecap">Cronograma</span>
+            <h2 class="text-tecap-dark mt-2">Prazos do Programa</h2>
+          </div>
+          
+          <div class="card-conteudo">
+            <div class="timeline-item">
+              <span>📅</span>
+              <span><strong>Termo de Adesão + Termo de Compromisso</strong></span>
+              <span class="data">20/02/2026</span>
+            </div>
+            <div class="timeline-item">
+              <span>📅</span>
+              <span><strong>Entrega do Plano de Ação</strong></span>
+              <span class="data">31/03/2026</span>
+            </div>
+            <div class="timeline-item">
+              <span>📅</span>
+              <span><strong>RFB informa adesões aos Tribunais de Contas</strong></span>
+              <span class="data">30/04/2026</span>
+            </div>
+            <div class="timeline-item">
+              <span>📅</span>
+              <span><strong>Conformidade do eSocial</strong></span>
+              <span class="data">30/09/2026</span>
+            </div>
+            <div class="timeline-item">
+              <span>📅</span>
+              <span><strong>Pagamento ou parcelamento de tributos</strong></span>
+              <span class="data">30/11/2026</span>
+            </div>
+            <div class="timeline-item">
+              <span>📅</span>
+              <span><strong>RFB informa órgãos conformes aos Tribunais de Contas</strong></span>
+              <span class="data">29/01/2027</span>
+            </div>
+          </div>
+
+          <div class="card-conteudo">
+            <h6 class="text-tecap-primary"><i class="bi bi-info-circle-fill me-2"></i>Suporte da TECAP</h6>
+            <p class="small mb-0">A equipe da TECAP Inovações Tecnológicas está preparada e estruturada para dar todo apoio para o atendimento dos requisitos da Portaria 632/2026, tanto em relação a Autorregularização do eSocial como <strong>Programa Gerador de Declaração de Contingência (PGD-C) em substituição a DIRF, ano calendário 2025.</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <div class="card-conteudo">
+            <h3 class="fw-bold text-center mb-3 text-tecap-dark">Fale com a TECAP</h3>
+            <p class="text-center text-secondary small mb-4">Preencha o formulário e nossa equipe entrará em contato</p>
+            
+            <form id="formContato" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold small">Nome</label>
+                  <input type="text" class="form-control" id="nome" placeholder="Seu nome" required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold small">E-mail</label>
+                  <input type="email" class="form-control" id="email" placeholder="exemplo@dominio.com" required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold small">Telefone</label>
+                  <input type="tel" class="form-control" id="telefone" placeholder="(11) 99999-9999" required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold small">Órgão</label>
+                  <input type="text" class="form-control" id="orgao" placeholder="Nome do órgão" required />
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-semibold small">Mensagem</label>
+                  <textarea class="form-control" id="mensagem" rows="3" placeholder="Sua mensagem..."></textarea>
+                </div>
+                <div class="col-12 mt-3">
+                  <button type="submit" class="btn btn-tecap w-100">Solicitar Contato</button>
+                </div>
+              </div>
+            </form>
+            <p class="text-center text-secondary small mt-3"><i class="bi bi-shield-lock-fill me-1"></i> Seus dados estão seguros</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-tecap">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <h5 class="fw-bold">TECAP</h5>
+          <p class="text-white-50 small">Solução Cloud para EFD-Reinf com automação e segurança.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white-50"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-instagram fs-5"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-youtube fs-5"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-bold">Contato</h6>
+          <ul class="list-unstyled small text-white-50">
+            <li><i class="bi bi-whatsapp me-2"></i> (11) 98850-5506</li>
+            <li><i class="bi bi-envelope me-2"></i> suporte@tecap.tech</li>
+            <li><i class="bi bi-geo-alt me-2"></i> Av. Paulista, 2064 - São Paulo</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-bold">Links</h6>
+          <ul class="list-unstyled small text-white-50">
+            <li><a href="#" class="text-white-50 text-decoration-none">Política de Privacidade</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">FAQ</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Ajuda</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white border-opacity-10 my-3" />
+      <div class="text-center text-white-50 small">© 2026 TECAP. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Scroll spy simples
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Formulário simples
+    document.getElementById('formContato').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('button[type="submit"]');
+      const original = btn.innerHTML;
+      btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Enviando...';
+      btn.disabled = true;
+      
+      setTimeout(() => {
+        btn.innerHTML = '<i class="bi bi-check-circle me-2"></i> Enviado!';
+        btn.classList.add('btn-success');
+        setTimeout(() => {
+          btn.innerHTML = original;
+          btn.disabled = false;
+          btn.classList.remove('btn-success');
+          this.reset();
+        }, 2500);
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
