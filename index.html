@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TECAP – Solução Cloud para EFD-Reinf</title>
+  <!-- Bootstrap 5 + Icons + Animate.css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- Google Fonts (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset / base - novas cores */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #0b1a2e; overflow-x: hidden; }
+    
+    /* Nova paleta de cores */
+    :root {
+      --tecap-dark: rgb(47, 50, 98);
+      --tecap-primary: rgb(50, 54, 104);
+      --tecap-light: #eef0f7;
+      --tecap-gray: #f1f5f9;
+      --tecap-text: #0b1a2e;
+      --tecap-white: #ffffff;
+    }
+    
+    .bg-tecap-dark { background: rgb(47, 50, 98); }
+    .bg-tecap-primary { background: rgb(50, 54, 104); }
+    .bg-tecap-light { background: #eef0f7; }
+    .bg-tecap-gray { background: #f1f5f9; }
+    .text-tecap-dark { color: rgb(47, 50, 98); }
+    .text-tecap-primary { color: rgb(50, 54, 104); }
+    
+    .btn-tecap { 
+      background: rgb(50, 54, 104); 
+      color: #fff; 
+      border-radius: 50px; 
+      padding: 0.7rem 2rem; 
+      font-weight: 600; 
+      transition: 0.3s; 
+      border: none; 
+    }
+    .btn-tecap:hover { 
+      background: rgb(35, 38, 75); 
+      color: #fff; 
+      transform: scale(1.02); 
+    }
+    .btn-outline-tecap { 
+      border: 2px solid rgb(50, 54, 104); 
+      color: rgb(50, 54, 104); 
+      border-radius: 50px; 
+      padding: 0.7rem 2rem; 
+      font-weight: 600; 
+      transition: 0.3s; 
+      background: transparent;
+    }
+    .btn-outline-tecap:hover { 
+      background: rgb(50, 54, 104); 
+      color: #fff; 
+    }
+
+    /* seções com fundo alternado */
+    .section-padding { padding: 4rem 0; }
+
+    /* cards diferenciais */
+    .card-diff { 
+      background: #ffffff; 
+      border-radius: 20px; 
+      padding: 2rem 1.5rem; 
+      box-shadow: 0 12px 30px rgba(47,50,98,0.08); 
+      transition: 0.3s; 
+      height: 100%; 
+      border: 1px solid rgba(50,54,104,0.06); 
+    }
+    .card-diff:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 24px 48px rgba(47,50,98,0.12); 
+      border-color: rgba(50,54,104,0.15); 
+    }
+    .card-diff i { 
+      font-size: 2.8rem; 
+      color: rgb(50, 54, 104); 
+      margin-bottom: 1rem; 
+    }
+    .card-diff h5, .card-diff h6 { color: rgb(47, 50, 98); }
+
+    /* hero lottie placeholder */
+    .lottie-placeholder { max-width: 380px; margin: 0 auto; }
+
+    /* feedbacks */
+    .feedback-card { 
+      background: white; 
+      border-radius: 24px; 
+      padding: 2rem; 
+      box-shadow: 0 8px 24px rgba(0,0,0,0.02); 
+      border-left: 6px solid rgb(50, 54, 104); 
+    }
+
+    /* navegação fixa com blur - nova cor */
+    .navbar-tecap { 
+      background: rgba(47, 50, 98, 0.95) !important; 
+      backdrop-filter: blur(8px); 
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+    }
+    .navbar-tecap .navbar-brand img { height: 40px; }
+    .navbar-tecap .nav-link { 
+      color: rgba(255,255,255,0.8) !important; 
+      font-weight: 500; 
+      margin: 0 0.25rem; 
+      transition: 0.2s; 
+    }
+    .navbar-tecap .nav-link:hover { color: #fff !important; }
+    .navbar-tecap .nav-link.active { 
+      color: #fff !important; 
+      background: rgba(255,255,255,0.12); 
+      border-radius: 30px; 
+    }
+
+    /* animações de entrada */
+    .animate-on-scroll { 
+      opacity: 0; 
+      transform: translateY(30px); 
+      transition: opacity 0.9s ease, transform 0.9s ease; 
+    }
+    .animate-on-scroll.visible { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+
+    /* botão flutuante */
+    .btn-floating-orc { 
+      position: fixed; 
+      bottom: 24px; 
+      right: 24px; 
+      z-index: 999; 
+      background: rgb(50, 54, 104); 
+      color: #fff; 
+      border-radius: 60px; 
+      padding: 0.8rem 1.8rem; 
+      box-shadow: 0 8px 28px rgba(50,54,104,0.4); 
+      border: none; 
+      font-weight: 600; 
+      display: flex; 
+      align-items: center; 
+      gap: 8px; 
+      transition: 0.3s; 
+      text-decoration: none;
+    }
+    .btn-floating-orc:hover { 
+      background: rgb(35, 38, 75); 
+      transform: scale(1.04); 
+      color: #fff; 
+    }
+
+    /* Badge personalizado */
+    .badge-tecap {
+      background: rgba(50, 54, 104, 0.10);
+      color: rgb(50, 54, 104);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+    .badge-tecap-white {
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+
+    /* Hero com gradiente nas novas cores */
+    .hero-tecap {
+      background: linear-gradient(145deg, rgb(47, 50, 98) 0%, rgb(50, 54, 104) 100%);
+      color: white;
+    }
+
+    /* Honeypot - campo escondido para bots */
+    .honeypot-field {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      opacity: 0;
+      pointer-events: none;
+      height: 0;
+      width: 0;
+      overflow: hidden;
+    }
+
+    /* Toast de notificação */
+    .toast-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+    .toast-custom {
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      border-left: 5px solid rgb(50, 54, 104);
+      min-width: 280px;
+      max-width: 400px;
+      animation: slideInRight 0.4s ease;
+      margin-bottom: 12px;
+    }
+    .toast-custom.error {
+      border-left-color: #dc3545;
+    }
+    .toast-custom.success {
+      border-left-color: #28a745;
+    }
+    .toast-custom .toast-title {
+      font-weight: 600;
+      color: rgb(47, 50, 98);
+      margin-bottom: 4px;
+    }
+    .toast-custom .toast-message {
+      color: #555;
+      font-size: 0.9rem;
+    }
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    /* Spinner de carregamento */
+    .spinner-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
+    }
+    .spinner-overlay.active {
+      display: flex;
+    }
+    .spinner-box {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+      .section-padding { padding: 2.5rem 0; }
+      .btn-floating-orc { padding: 0.6rem 1.4rem; font-size: 0.9rem; right: 16px; bottom: 16px; }
+      .toast-container { right: 10px; left: 10px; }
+      .toast-custom { min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <!-- SPINNER OVERLAY -->
+  <div class="spinner-overlay" id="spinnerOverlay">
+    <div class="spinner-box">
+      <div class="spinner-border text-tecap-primary" role="status" style="width: 3rem; height: 3rem;">
+        <span class="visually-hidden">Carregando...</span>
+      </div>
+      <p class="mt-3 fw-semibold text-tecap-dark">Enviando sua mensagem...</p>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-tecap fixed-top py-2">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="#">
+        <img class="img-fluid" src="./assets/Design TECAP/Logo/PNG/Logo Clara sem Background – com frase.png" viewBox='0 0 300 60'%3E%3Ctext x='0' y='42' font-family='Inter, sans-serif' font-weight='700' font-size='32' fill='%23ffffff'%3ETECAP%3C/text%3E%3Ctext x='112' y='30' font-family='Inter, sans-serif' font-weight='400' font-size='12' fill='%2390b8d9'%3Ecloud%3C/text%3E%3C/svg%3E" alt="TECAP" height="40" />
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sistema">Sistema</a></li>
+          <li class="nav-item"><a class="nav-link" href="#leis">Legislação</a></li>
+          <li class="nav-item"><a class="nav-link" href="#diferenciais">Diferenciais</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        </ul>
+        <a href="#orcamento" class="btn btn-tecap btn-sm px-4">Quero Conhecer</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="section-padding hero-tecap" style="margin-top: 70px;">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 animate-on-scroll">
+          <h1 class="display-4 fw-bold mb-3" style="line-height: 1.2;">Sistema exclusivo para EFD-Reinf <br/>com automação total</h1>
+          <p class="lead mb-4" style="color: rgba(255,255,255,0.85);">Importação automática de notas fiscais do SIAFI/Tesouro Gerencial, em ambiente Cloud com segurança e backup diário.</p>
+          <a href="#orcamento" class="btn btn-tecap btn-lg me-3">Quero Conhecer</a>
+          <a href="#sistema" class="btn btn-outline-light btn-lg">Saiba mais</a>
+        </div>
+        <div class="col-lg-6 text-center animate-on-scroll">
+          <div class="lottie-placeholder">
+            <div class="position-relative d-inline-block">
+              <i class="bi bi-cloud-upload-fill display-1" style="color: #a8b5e0; animation: pulse 2s infinite;"></i>
+              <img src="./assets/Design TECAP/Fotos/Homem.png" alt="Ilustração de automação" class="img-fluid mt-3" style="max-width: 100%; height: auto; border-radius: 12px;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SISTEMA -->
+  <section id="sistema" class="section-padding bg-tecap-gray">
+    <div class="container">
+      <div class="text-center mb-5 animate-on-scroll">
+        <span class="badge-tecap">Sistema</span>
+        <h2 class="display-5 fw-semibold mt-3 text-tecap-dark">Para órgãos públicos e administração</h2>
+        <p class="text-secondary">Automação inteligente para a escrituração fiscal da EFD-Reinf</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 animate-on-scroll">
+          <div class="card-diff text-center">
+            <i class="bi bi-building"></i>
+            <h5 class="fw-bold">Órgãos Públicos</h5>
+            <p class="text-secondary">Extração automática do Tesouro Gerencial do SIAFI, com ambiente dedicado.</p>
+          </div>
+        </div>
+        <div class="col-md-4 animate-on-scroll">
+          <div class="card-diff text-center">
+            <i class="bi bi-robot"></i>
+            <h5 class="fw-bold">Preenchimento automático</h5>
+            <p class="text-secondary">Eventos R-2010, R-2055, R-4010, R-4020 preenchidos com precisão.</p>
+          </div>
+        </div>
+        <div class="col-md-4 animate-on-scroll">
+          <div class="card-diff text-center">
+            <i class="bi bi-file-spreadsheet"></i>
+            <h5 class="fw-bold">Arquivos XLS → XML</h5>
+            <p class="text-secondary">Conversão simples e rápida dos arquivos do tesouro gerencial.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEGISLAÇÃO -->
+  <section id="leis" class="section-padding" style="background: #ffffff;">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 order-lg-2 animate-on-scroll">
+          <span class="badge-tecap">Legislação</span>
+          <h2 class="display-5 fw-semibold mt-3 text-tecap-dark">Fique em conformidade com a IN RFB nº 2043/2021</h2>
+          <p class="text-secondary">A EFD-Reinf é obrigatória para órgãos públicos desde março de 2023. O TECAP garante a entrega dentro do prazo, sem multas.</p>
+          <ul class="list-unstyled mt-4">
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-tecap-primary me-2"></i>Pagamentos PF (R-4010) e PJ (R-4020)</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-tecap-primary me-2"></i>Autorregularização com a Portaria RFB nº 632/2025</li>
+            <li><i class="bi bi-check-circle-fill text-tecap-primary me-2"></i>Ambiente Cloud com backup diário</li>
+          </ul>
+          <a href="#" class="btn btn-outline-tecap mt-3">Leia a portaria</a>
+        </div>
+        <div class="col-lg-6 order-lg-1 text-center animate-on-scroll">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23eef0f7' rx='20'/%3E%3Ctext x='60' y='140' font-family='Inter' font-size='22' fill='%232f3262' font-weight='600'%3E%3Ctspan%3EIN RFB nº 2043/2021%3C/tspan%3E%3C/text%3E%3Ctext x='60' y='185' font-family='Inter' font-size='16' fill='%23454a7a'%3E%3Ctspan%3EObrigatório a partir de março/2023%3C/tspan%3E%3C/text%3E%3C/svg%3E" alt="Legislação" class="img-fluid rounded-4 shadow-sm" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section id="diferenciais" class="section-padding bg-tecap-gray">
+    <div class="container">
+      <div class="text-center mb-5 animate-on-scroll">
+        <span class="badge-tecap">Diferenciais</span>
+        <h2 class="display-5 fw-semibold mt-3 text-tecap-dark">O melhor recurso do mercado</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-3 col-sm-6 animate-on-scroll">
+          <div class="card-diff text-center">
+            <i class="bi bi-shield-check"></i>
+            <h6 class="fw-bold">Segurança</h6>
+            <p class="small text-secondary">Tecnologia avançada para proteção das informações.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 animate-on-scroll">
+          <div class="card-diff text-center">
+            <i class="bi bi-speedometer2"></i>
+            <h6 class="fw-bold">Agilidade</h6>
+            <p class="small text-secondary">Processos otimizados para operação mais rápida.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 animate-on-scroll">
+          <div class="card-diff text-center">
+            <i class="bi bi-database-check"></i>
+            <h6 class="fw-bold">Confiabilidade</h6>
+            <p class="small text-secondary">Rigoroso controle de qualidade dos dados.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 animate-on-scroll">
+          <div class="card-diff text-center">
+            <i class="bi bi-cloud-download"></i>
+            <h6 class="fw-bold">Extração automática</h6>
+            <p class="small text-secondary">Economia de tempo e aumento de produtividade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEEDBACKS -->
+  <section class="section-padding" style="background: linear-gradient(135deg, rgb(47, 50, 98) 0%, rgb(50, 54, 104) 100%); color: white;">
+    <div class="container">
+      <div class="text-center mb-5 animate-on-scroll">
+        <span class="badge-tecap-white">Feedbacks</span>
+        <h2 class="display-5 fw-semibold mt-3 text-white">Quem confia no TECAP</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 animate-on-scroll">
+          <div class="feedback-card text-dark">
+            <h6 class="fw-bold text-tecap-dark">IFTO</h6>
+            <p class="small">"A TECAP inovou e saiu na frente para atender essa nova realidade. O sistema poupou o encargo dos lançamentos manuais."</p>
+          </div>
+        </div>
+        <div class="col-md-4 animate-on-scroll">
+          <div class="feedback-card text-dark">
+            <h6 class="fw-bold text-tecap-dark">UFG</h6>
+            <p class="small">"Colaborou com o envio de aproximadamente 396 eventos para a EFD-Reinf, dentro do prazo."</p>
+          </div>
+        </div>
+        <div class="col-md-4 animate-on-scroll">
+          <div class="feedback-card text-dark">
+            <h6 class="fw-bold text-tecap-dark">ANM</h6>
+            <p class="small">"O sistema nos ajuda muito com as emissões de notas fiscais. O suporte é bem feito e sempre esclarece nossas dúvidas."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORÇAMENTO com proteção anti-spam -->
+  <section id="orcamento" class="section-padding bg-tecap-gray">
+    <div class="container">
+      <div class="row justify-content-center animate-on-scroll">
+        <div class="col-lg-8 col-xl-7">
+          <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm position-relative">
+            <h3 class="fw-bold text-center mb-4 text-tecap-dark">Preencha o formulário e saiba mais</h3>
+            
+            <form id="formOrcamento" class="needs-validation" novalidate autocomplete="off">
+              <!-- HONEYPOT - Campo escondido para bots -->
+              <div class="honeypot-field">
+                <label for="website">Website</label>
+                <input type="text" id="website" name="website" value="" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <!-- TIMESTAMP - Prevenção de submissão rápida (bots) -->
+              <input type="hidden" id="formTimestamp" name="formTimestamp" value="" />
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="nome" class="form-label fw-semibold">Nome <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control form-control-lg" id="nome" name="nome" 
+                         placeholder="Seu nome" required 
+                         minlength="2" maxlength="100"
+                         pattern="[A-Za-zÀ-ÿ\s]+" 
+                         title="Apenas letras e espaços" />
+                  <div class="invalid-feedback">Nome é obrigatório (mínimo 2 caracteres).</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label fw-semibold">E-mail <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control form-control-lg" id="email" name="email" 
+                         placeholder="exemplo@dominio.com" required 
+                         maxlength="100" />
+                  <div class="invalid-feedback">E-mail válido é obrigatório.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="telefone" class="form-label fw-semibold">Telefone <span class="text-danger">*</span></label>
+                  <input type="tel" class="form-control form-control-lg" id="telefone" name="telefone" 
+                         placeholder="(11) 99999-9999" required 
+                         pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" 
+                         title="Formato: (99) 99999-9999" />
+                  <div class="invalid-feedback">Telefone é obrigatório (formato: (99) 99999-9999).</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="orgao" class="form-label fw-semibold">Órgão <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control form-control-lg" id="orgao" name="orgao" 
+                         placeholder="Nome do órgão" required 
+                         minlength="2" maxlength="100" />
+                  <div class="invalid-feedback">Órgão é obrigatório.</div>
+                </div>
+                <div class="col-12">
+                  <label for="mensagem" class="form-label fw-semibold">Mensagem</label>
+                  <textarea class="form-control form-control-lg" id="mensagem" name="mensagem" 
+                            rows="3" placeholder="Sua mensagem..." 
+                            maxlength="1000"></textarea>
+                  <div class="form-text text-secondary" id="charCount">0 / 1000 caracteres</div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="consentimento" name="consentimento" required />
+                    <label class="form-check-label small" for="consentimento">
+                      Concordo que meus dados sejam utilizados para contato conforme a <a href="#" class="text-tecap-primary">Política de Privacidade</a>. <span class="text-danger">*</span>
+                    </label>
+                    <div class="invalid-feedback">Você precisa concordar com o uso dos dados.</div>
+                  </div>
+                </div>
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-tecap w-100 btn-lg" id="submitBtn">
+                    <i class="bi bi-send me-2"></i>Solicitar Contato
+                  </button>
+                </div>
+              </div>
+            </form>
+            <p class="text-center text-secondary small mt-3">
+              <i class="bi bi-shield-lock-fill me-1"></i> Seus dados estão seguros e protegidos contra spam
+            </p>
+            <p class="text-center text-secondary small" style="font-size: 0.75rem;">
+              <i class="bi bi-robot me-1"></i> Proteção anti-bot ativa
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-tecap-dark text-white pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5 class="fw-bold">TECAP</h5>
+          <p class="text-white-50 small">Solução Cloud para EFD-Reinf com automação e segurança.</p>
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="text-white-50"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-instagram fs-5"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-youtube fs-5"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-bold">Contato</h6>
+          <ul class="list-unstyled small text-white-50">
+            <li><i class="bi bi-whatsapp me-2"></i> (11) 98850-5506</li>
+            <li><i class="bi bi-envelope me-2"></i> suporte@tecap.tech</li>
+            <li><i class="bi bi-geo-alt me-2"></i> Av. Paulista, 2064 - São Paulo</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-bold">Links</h6>
+          <ul class="list-unstyled small text-white-50">
+            <li><a href="#" class="text-white-50 text-decoration-none">Política de Privacidade</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">FAQ</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Ajuda</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white border-opacity-10 my-4" />
+      <div class="text-center text-white-50 small">© 2026 TECAP. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE -->
+  <a href="#orcamento" class="btn btn-floating-orc d-lg-none">
+    <i class="bi bi-chat-dots"></i> Quero Conhecer
+  </a>
+
+  <!-- Bootstrap + JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function() {
+      'use strict';
+
+      // ============================================
+      // PROTEÇÃO ANTI-SPAM E ANTI-VÍRUS
+      // ============================================
+
+      // 1. HONEYPOT - Campo escondido que bots preenchem
+      const honeypot = document.getElementById('website');
+      
+      // 2. TIMESTAMP - Prevenção de submissão muito rápida (bots)
+      document.getElementById('formTimestamp').value = Date.now();
+
+      // 3. SANITIZAÇÃO - Remove tags HTML e caracteres perigosos
+      function sanitizeInput(input) {
+        if (!input) return '';
+        // Remove tags HTML
+        let sanitized = input.replace(/<[^>]*>/g, '');
+        // Remove possíveis scripts
+        sanitized = sanitized.replace(/javascript:/gi, '');
+        sanitized = sanitized.replace(/on\w+=/gi, '');
+        // Remove caracteres de controle
+        sanitized = sanitized.replace(/[\x00-\x1F\x7F]/g, '');
+        // Limita espaços em branco excessivos
+        sanitized = sanitized.replace(/\s{2,}/g, ' ');
+        return sanitized.trim();
+      }
+
+      // 4. VALIDAÇÃO DE EMAIL com verificação de domínio
+      function isValidEmail(email) {
+        const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(email)) return false;
+        
+        // Bloqueia domínios temporários e suspeitos
+        const blockedDomains = [
+          'tempmail', 'guerrillamail', 'throwaway', 'mailinator', 
+          '10minute', 'yopmail', 'disposable', 'spamgourmet'
+        ];
+        const domain = email.split('@')[1].toLowerCase();
+        for (let blocked of blockedDomains) {
+          if (domain.includes(blocked)) return false;
+        }
+        return true;
+      }
+
+      // 5. VALIDAÇÃO DE TELEFONE (formato brasileiro)
+      function isValidPhone(phone) {
+        const phoneRegex = /^\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}$/;
+        return phoneRegex.test(phone);
+      }
+
+      // 6. VALIDAÇÃO DE NOME (apenas letras e espaços)
+      function isValidName(name) {
+        return /^[A-Za-zÀ-ÿ\s]{2,100}$/.test(name);
+      }
+
+      // 7. VALIDAÇÃO DE ÓRGÃO
+      function isValidOrgao(orgao) {
+        return orgao.length >= 2 && orgao.length <= 100;
+      }
+
+      // 8. VERIFICAÇÃO DE CONTEÚDO SUSPEITO (possível XSS ou SQL Injection)
+      function hasSuspiciousContent(text) {
+        const patterns = [
+          /<script/i,
+          /<\/script/i,
+          /<iframe/i,
+          /<object/i,
+          /<embed/i,
+          /onerror/i,
+          /onload/i,
+          /onclick/i,
+          /select.*from/i,
+          /union.*select/i,
+          /insert.*into/i,
+          /delete.*from/i,
+          /drop.*table/i,
+          /--/,
+          /;.*--/,
+          /'/,
+          /"/,
+          /\\/
+        ];
+        for (let pattern of patterns) {
+          if (pattern.test(text)) return true;
+        }
+        return false;
+      }
+
+      // 9. RATE LIMITING (prevenção de submissões múltiplas)
+      let lastSubmissionTime = 0;
+      const MIN_SUBMISSION_INTERVAL = 30000; // 30 segundos
+
+      // ============================================
+      // TOAST NOTIFICATIONS
+      // ============================================
+      function showToast(title, message, type = 'info') {
+        const container = document.getElementById('toastContainer');
+        const toast = document.createElement('div');
+        toast.className = `toast-custom ${type}`;
+        const icon = type === 'success' ? 'bi-check-circle-fill' : 
+                     type === 'error' ? 'bi-x-circle-fill' : 'bi-info-circle-fill';
+        toast.innerHTML = `
+          <div class="toast-title"><i class="bi ${icon} me-2" style="color: ${type === 'success' ? '#28a745' : type === 'error' ? '#dc3545' : '#1a6f9e'}"></i>${title}</div>
+          <div class="toast-message">${message}</div>
+        `;
+        container.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          toast.style.transform = 'translateX(100%)';
+          toast.style.transition = 'all 0.4s ease';
+          setTimeout(() => toast.remove(), 400);
+        }, 5000);
+      }
+
+      // ============================================
+      // SPINNER
+      // ============================================
+      function showSpinner() {
+        document.getElementById('spinnerOverlay').classList.add('active');
+      }
+      function hideSpinner() {
+        document.getElementById('spinnerOverlay').classList.remove('active');
+      }
+
+      // ============================================
+      // CONTADOR DE CARACTERES
+      // ============================================
+      const mensagem = document.getElementById('mensagem');
+      const charCount = document.getElementById('charCount');
+      mensagem.addEventListener('input', function() {
+        const count = this.value.length;
+        charCount.textContent = `${count} / 1000 caracteres`;
+        if (count > 900) {
+          charCount.style.color = '#dc3545';
+        } else {
+          charCount.style.color = '#6c757d';
+        }
+      });
+
+      // ============================================
+      // FORMULÁRIO - SUBMISSÃO COM PROTEÇÃO
+      // ============================================
+      const form = document.getElementById('formOrcamento');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // --- VERIFICAÇÃO 1: HONEYPOT ---
+        if (honeypot.value.length > 0) {
+          // Bot preencheu o campo escondido
+          showToast('Acesso negado', 'Submissão bloqueada por segurança.', 'error');
+          return;
+        }
+
+        // --- VERIFICAÇÃO 2: TEMPO DE SUBMISSÃO (Rate Limiting) ---
+        const now = Date.now();
+        const timestamp = parseInt(document.getElementById('formTimestamp').value);
+        if (now - timestamp < 3000) {
+          // Submissão muito rápida (bot)
+          showToast('Acesso negado', 'Submissão muito rápida. Por favor, aguarde alguns segundos.', 'error');
+          return;
+        }
+        if (now - lastSubmissionTime < MIN_SUBMISSION_INTERVAL && lastSubmissionTime > 0) {
+          showToast('Aguarde', 'Você já enviou uma mensagem recentemente. Por favor, aguarde 30 segundos.', 'info');
+          return;
+        }
+
+        // --- COLETA E SANITIZAÇÃO DOS DADOS ---
+        const nome = sanitizeInput(document.getElementById('nome').value);
+        const email = sanitizeInput(document.getElementById('email').value).toLowerCase();
+        const telefone = sanitizeInput(document.getElementById('telefone').value);
+        const orgao = sanitizeInput(document.getElementById('orgao').value);
+        const mensagemText = sanitizeInput(document.getElementById('mensagem').value);
+        const consentimento = document.getElementById('consentimento').checked;
+
+        // --- VERIFICAÇÃO 3: VALIDAÇÕES ---
+        if (!isValidName(nome)) {
+          showToast('Erro de validação', 'Nome inválido. Use apenas letras e espaços (mínimo 2 caracteres).', 'error');
+          document.getElementById('nome').classList.add('is-invalid');
+          return;
+        }
+        document.getElementById('nome').classList.remove('is-invalid');
+
+        if (!isValidEmail(email)) {
+          showToast('Erro de validação', 'E-mail inválido ou de domínio temporário.', 'error');
+          document.getElementById('email').classList.add('is-invalid');
+          return;
+        }
+        document.getElementById('email').classList.remove('is-invalid');
+
+        if (!isValidPhone(telefone)) {
+          showToast('Erro de validação', 'Telefone inválido. Use o formato (99) 99999-9999.', 'error');
+          document.getElementById('telefone').classList.add('is-invalid');
+          return;
+        }
+        document.getElementById('telefone').classList.remove('is-invalid');
+
+        if (!isValidOrgao(orgao)) {
+          showToast('Erro de validação', 'Órgão deve ter pelo menos 2 caracteres.', 'error');
+          document.getElementById('orgao').classList.add('is-invalid');
+          return;
+        }
+        document.getElementById('orgao').classList.remove('is-invalid');
+
+        if (!consentimento) {
+          showToast('Atenção', 'Você precisa concordar com o uso dos dados.', 'info');
+          document.getElementById('consentimento').classList.add('is-invalid');
+          return;
+        }
+        document.getElementById('consentimento').classList.remove('is-invalid');
+
+        // --- VERIFICAÇÃO 4: CONTEÚDO SUSPEITO ---
+        const fullText = `${nome} ${email} ${orgao} ${mensagemText}`;
+        if (hasSuspiciousContent(fullText)) {
+          showToast('Acesso negado', 'Conteúdo suspeito detectado. Por favor, verifique sua mensagem.', 'error');
+          return;
+        }
+
+        // --- VERIFICAÇÃO 5: MENSAGEM COM LINKS SUSPEITOS ---
+        if (mensagemText.length > 0) {
+          const urlPattern = /https?:\/\/[^\s]+/gi;
+          const urls = mensagemText.match(urlPattern);
+          if (urls) {
+            // Verifica se são domínios seguros (apenas whitelist)
+            const allowedDomains = ['tecap.tech', 'gov.br', 'receita.fazenda.gov.br'];
+            for (let url of urls) {
+              let isAllowed = false;
+              for (let domain of allowedDomains) {
+                if (url.includes(domain)) isAllowed = true;
+              }
+              if (!isAllowed) {
+                showToast('Acesso negado', 'Links para domínios não autorizados não são permitidos.', 'error');
+                return;
+              }
+            }
+          }
+        }
+
+        // --- VERIFICAÇÃO 6: PREVENÇÃO DE INJEÇÃO DE CÓDIGO ---
+        // Detecta caracteres especiais em sequência
+        const suspiciousSequences = ['<', '>', '{', '}', '[', ']', '`', ';', '||', '&&'];
+        for (let seq of suspiciousSequences) {
+          if (fullText.includes(seq)) {
+            showToast('Acesso negado', 'Caracteres especiais não permitidos.', 'error');
+            return;
+          }
+        }
+
+        // --- TODAS AS VERIFICAÇÕES PASSARAM ---
+        lastSubmissionTime = Date.now();
+
+        // --- SIMULAÇÃO DE ENVIO COM SPINNER ---
+        showSpinner();
+
+        const btn = document.getElementById('submitBtn');
+        const originalText = btn.innerHTML;
+        btn.disabled = true;
+
+        // Simula envio para o servidor (substituir por fetch real)
+        setTimeout(() => {
+          hideSpinner();
+          btn.innerHTML = '<i class="bi bi-check-circle me-2"></i> Enviado com sucesso!';
+          btn.classList.add('btn-success');
+
+          showToast('Sucesso!', 'Sua mensagem foi enviada com segurança. Entraremos em contato em breve.', 'success');
+
+          // Reseta o formulário após 3 segundos
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+            btn.classList.remove('btn-success');
+            form.reset();
+            form.classList.remove('was-validated');
+            document.getElementById('formTimestamp').value = Date.now();
+            charCount.textContent = '0 / 1000 caracteres';
+            charCount.style.color = '#6c757d';
+          }, 3000);
+
+          // LOG DE SEGURANÇA (em produção, enviar para o servidor)
+          console.log('✅ Formulário enviado com segurança:', {
+            nome, email, telefone, orgao,
+            mensagem: mensagemText.substring(0, 100) + '...',
+            timestamp: new Date().toISOString()
+          });
+
+        }, 2000);
+      });
+
+      // ============================================
+      // REMOVE VALIDAÇÃO VISUAL AO DIGITAR
+      // ============================================
+      document.querySelectorAll('#formOrcamento .form-control, #formOrcamento .form-check-input').forEach(input => {
+        input.addEventListener('input', function() {
+          this.classList.remove('is-invalid');
+        });
+      });
+
+      // ============================================
+      // SCROLL SPY (navegação ativa)
+      // ============================================
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 120;
+          if (window.scrollY >= sectionTop) {
+            current = section.getAttribute('id');
+          }
+        });
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+      });
+
+      // ============================================
+      // ANIMAÇÃO ON SCROLL
+      // ============================================
+      const animElements = document.querySelectorAll('.animate-on-scroll');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -20px 0px' });
+      animElements.forEach(el => observer.observe(el));
+
+      console.log('🛡️ TECAP - Proteção anti-spam e anti-vírus ativa');
+    })();
+  </script>
+</body>
+</html>

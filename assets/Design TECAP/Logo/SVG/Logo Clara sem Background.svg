@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1001" height="337" viewBox="0 0 1001 337">
+  <defs>
+    <clipPath id="clip-Logo_Clara_sem_Background">
+      <rect width="1001" height="337"/>
+    </clipPath>
+  </defs>
+  <g id="Logo_Clara_sem_Background" data-name="Logo Clara sem Background" clip-path="url(#clip-Logo_Clara_sem_Background)">
+    <g id="Grupo_1527" data-name="Grupo 1527" transform="translate(-902 -43.308)">
+      <text id="tecap" transform="translate(1245 265.308)" fill="#fff" font-size="137" font-family="LawyerGothic-Bold, Lawyer Gothic" font-weight="700"><tspan x="0" y="0">tecap</tspan></text>
+      <g id="Grupo_1510" data-name="Grupo 1510" transform="translate(973 101)">
+        <rect id="Retângulo_882" data-name="Retângulo 882" width="23" height="170" rx="2" transform="translate(131 10.308)" fill="#fff"/>
+        <rect id="Retângulo_884" data-name="Retângulo 884" width="22" height="131" rx="2" transform="translate(43 26.308)" fill="#fff"/>
+        <rect id="Retângulo_885" data-name="Retângulo 885" width="20" height="65" rx="2" transform="translate(0 95.308)" fill="#fff"/>
+        <rect id="Retângulo_886" data-name="Retângulo 886" width="23" height="95" rx="2" transform="translate(177 78.308)" fill="#fff"/>
+        <rect id="Retângulo_887" data-name="Retângulo 887" width="23" height="19" rx="2" transform="translate(177 46.308)" fill="#fff"/>
+        <rect id="Retângulo_888" data-name="Retângulo 888" width="23" height="19" rx="2" transform="translate(88 0.308)" fill="#fff"/>
+        <rect id="Retângulo_889" data-name="Retângulo 889" width="22" height="23" rx="2" transform="translate(43 173.308)" fill="#fff"/>
+        <rect id="Retângulo_891" data-name="Retângulo 891" width="20" height="19" rx="2" transform="translate(0 59.308)" fill="#fff"/>
+        <rect id="Retângulo_890" data-name="Retângulo 890" width="23" height="19" rx="2" transform="translate(131 203.308)" fill="#fff"/>
+        <rect id="Retângulo_883" data-name="Retângulo 883" width="23" height="180" rx="2" transform="translate(88 42.308)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

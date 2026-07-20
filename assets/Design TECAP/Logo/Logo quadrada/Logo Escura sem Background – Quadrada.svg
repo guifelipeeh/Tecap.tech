@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000" viewBox="0 0 1000 1000">
+  <defs>
+    <clipPath id="clip-Logo_Escura_sem_Background_Quadrada">
+      <rect width="1000" height="1000"/>
+    </clipPath>
+  </defs>
+  <g id="Logo_Escura_sem_Background_Quadrada" data-name="Logo Escura sem Background – Quadrada" clip-path="url(#clip-Logo_Escura_sem_Background_Quadrada)">
+    <g id="Grupo_1536" data-name="Grupo 1536" transform="translate(-175.038 15.506)">
+      <text id="tecap" transform="translate(240.038 733.494)" fill="#26295c" font-size="203" font-family="LawyerGothic-Bold, Lawyer Gothic" font-weight="700"><tspan x="0" y="0">tecap</tspan></text>
+      <g id="Grupo_1510" data-name="Grupo 1510" transform="translate(528.385 181)">
+        <rect id="Retângulo_882" data-name="Retângulo 882" width="34" height="253" rx="2" transform="translate(194.652 14.494)" fill="#26295c"/>
+        <rect id="Retângulo_884" data-name="Retângulo 884" width="33" height="195" rx="2" transform="translate(63.652 38.494)" fill="#26295c"/>
+        <rect id="Retângulo_885" data-name="Retângulo 885" width="30" height="96" rx="2" transform="translate(-0.347 141.494)" fill="#26295c"/>
+        <rect id="Retângulo_886" data-name="Retângulo 886" width="35" height="142" rx="2" transform="translate(262.652 115.494)" fill="#26295c"/>
+        <rect id="Retângulo_887" data-name="Retângulo 887" width="35" height="28" rx="2" transform="translate(262.652 68.494)" fill="#26295c"/>
+        <rect id="Retângulo_888" data-name="Retângulo 888" width="34" height="28" rx="2" transform="translate(130.652 0.494)" fill="#26295c"/>
+        <rect id="Retângulo_889" data-name="Retângulo 889" width="33" height="34" rx="2" transform="translate(63.652 257.494)" fill="#26295c"/>
+        <rect id="Retângulo_891" data-name="Retângulo 891" width="30" height="28" rx="2" transform="translate(-0.347 87.494)" fill="#26295c"/>
+        <rect id="Retângulo_890" data-name="Retângulo 890" width="34" height="29" rx="2" transform="translate(194.652 301.494)" fill="#26295c"/>
+        <rect id="Retângulo_883" data-name="Retângulo 883" width="34" height="268" rx="2" transform="translate(130.652 62.494)" fill="#26295c"/>
+      </g>
+    </g>
+  </g>
+</svg>
