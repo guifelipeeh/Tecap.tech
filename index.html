@@ -129,15 +129,15 @@
       border-radius: 30px; 
     }
 
-    /* animações de entrada */
+    /* ANIMAÇÃO ON SCROLL – AGORA VEM DE TRÁS (zoom) SEM SOBREPOR */
     .animate-on-scroll { 
       opacity: 0; 
-      transform: translateY(30px); 
-      transition: opacity 0.9s ease, transform 0.9s ease; 
+      transform: scale(0.90);         /* começa um pouco menor (profundidade) */
+      transition: opacity 0.8s ease, transform 0.8s ease; 
     }
     .animate-on-scroll.visible { 
       opacity: 1; 
-      transform: translateY(0); 
+      transform: scale(1);            /* volta ao tamanho normal */
     }
 
     /* botão flutuante */
@@ -306,29 +306,23 @@
   </nav>
 
   <!-- HERO -->
-<!-- 1. Trocamos 'section-padding' por 'pb-0' para zerar o espaçamento na parte inferior da seção -->
-<section id="home" class="hero-tecap pb-0" style="margin-top: 70px;">
-  <div class="container px-4 px-lg-5">
-    <!-- 2. Adicionamos 'align-items-end' para alinhar a imagem pela base da linha -->
-    <div class="row align-items-end g-5">
-      
-      <!-- Mantemos o texto centralizado verticalmente ou com um padding para não colar no topo -->
-      <div class="col-lg-6 animate-on-scroll py-5">
-        <h1 class="display-4 fw-bold mb-3" style="line-height: 1.2;">Sistema exclusivo para EFD-Reinf <br/>com automação total</h1>
-        <p class="lead mb-4" style="color: rgba(255,255,255,0.85);">Importação automática de notas fiscais do SIAFI/Tesouro Gerencial, em ambiente Cloud com segurança e backup diário.</p>
-        <a href="#orcamento" class="btn btn-tecap btn-lg me-3">Quero Conhecer</a>
-        <a href="#sistema" class="btn btn-outline-light btn-lg">Saiba mais</a>
-      </div>
-      
-      <div class="col-lg-5 text-center animate-on-scroll">
-        <!-- 3. Removemos qualquer margem da div e aplicamos classes para remover bordas/margens da imagem -->
-        <div class="lottie-placeholder" style="margin-bottom: 0; padding-bottom: 0;">
-          <img src="./assets/Design TECAP/Fotos/Homem.png" class="img-fluid mb-0 d-block w-100" alt="Ilustração de automação" style="vertical-align: bottom;" />
+  <section id="home" class="hero-tecap pb-0" style="margin-top: 70px;">
+    <div class="container px-4 px-lg-5">
+      <div class="row align-items-end g-5">
+        <div class="col-lg-6 animate-on-scroll py-5">
+          <h1 class="display-4 fw-bold mb-3" style="line-height: 1.2;">Sistema exclusivo para EFD-Reinf <br/>com automação total</h1>
+          <p class="lead mb-4" style="color: rgba(255,255,255,0.85);">Importação automática de notas fiscais do SIAFI/Tesouro Gerencial, em ambiente Cloud com segurança e backup diário.</p>
+          <a href="#orcamento" class="btn btn-tecap btn-lg me-3">Quero Conhecer</a>
+          <a href="#sistema" class="btn btn-outline-light btn-lg">Saiba mais</a>
+        </div>
+        <div class="col-lg-5 text-center animate-on-scroll">
+          <div class="lottie-placeholder" style="margin-bottom: 0; padding-bottom: 0;">
+            <img src="./assets/Design TECAP/Fotos/Homem.png" class="img-fluid mb-0 d-block w-100" alt="Ilustração de automação" style="vertical-align: bottom;" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- SISTEMA -->
   <section id="sistema" class="section-padding bg-tecap-gray">
@@ -364,34 +358,26 @@
   </section>
 
   <!-- LEGISLAÇÃO -->
-<!-- 1. Trocamos 'section-padding' por 'pt-5 pb-0' para manter o espaço no topo e zerar embaixo -->
-<section id="leis" class="pt-5 pb-0" style="background: #ffffff;">
-  <div class="container">
-    <!-- 2. Adicionamos 'align-items-end' para que a coluna da imagem se apoie na base da linha -->
-    <div class="row align-items-end g-5">
-      
-      <!-- Mantemos a coluna de texto com um padding vertical interno para não quebrar o alinhamento visual -->
-      <div class="col-lg-6 order-lg-2 animate-on-scroll py-5">
-        <span class="badge-tecap">Legislação</span>
-        <h2 class="display-5 fw-semibold mt-3 text-tecap-dark">Fique em conformidade com a IN RFB nº 2043/2021</h2>
-        <p class="text-secondary">A EFD-Reinf é obrigatória para órgãos públicos desde março de 2023. O TECAP garante a entrega dentro do prazo, sem multas.</p>
-        <ul class="list-unstyled mt-4">
-          <li class="mb-2"><i class="bi bi-check-circle-fill text-tecap-primary me-2"></i>Pagamentos PF (R-4010) e PJ (R-4020)</li>
-          <li class="mb-2"><i class="bi bi-check-circle-fill text-tecap-primary me-2"></i>Autorregularização com a Portaria RFB nº 632/2025</li>
-          <li><i class="bi bi-check-circle-fill text-tecap-primary me-2"></i>Ambiente Cloud com backup diário</li>
-        </ul>
-        <a href="./portaria.html" class="btn btn-outline-tecap mt-3">Leia a portaria</a>
+  <section id="leis" class="pt-5 pb-0" style="background: #ffffff;">
+    <div class="container">
+      <div class="row align-items-end g-5">
+        <div class="col-lg-6 order-lg-2 animate-on-scroll py-5">
+          <span class="badge-tecap">Legislação</span>
+          <h2 class="display-5 fw-semibold mt-3 text-tecap-dark">Fique em conformidade com a IN RFB nº 2043/2021</h2>
+          <p class="text-secondary">A EFD-Reinf é obrigatória para órgãos públicos desde março de 2023. O TECAP garante a entrega dentro do prazo, sem multas.</p>
+          <ul class="list-unstyled mt-4">
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-tecap-primary me-2"></i>Pagamentos PF (R-4010) e PJ (R-4020)</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-tecap-primary me-2"></i>Autorregularização com a Portaria RFB nº 632/2025</li>
+            <li><i class="bi bi-check-circle-fill text-tecap-primary me-2"></i>Ambiente Cloud com backup diário</li>
+          </ul>
+          <a href="./portaria.html" class="btn btn-outline-tecap mt-3">Leia a portaria</a>
+        </div>
+        <div class="col-lg-6 order-lg-1 text-center animate-on-scroll">
+          <img src="./assets/Design TECAP/Fotos/Mulher.webp" alt="Legislação" class="img-fluid mb-0 d-block w-100" style="vertical-align: bottom;" />
+        </div>
       </div>
-      
-      <!-- 3. Coluna da imagem com alinhamento resetado -->
-      <div class="col-lg-6 order-lg-1 text-center animate-on-scroll">
-        <!-- mb-0 remove margem e d-block + vertical-align eliminam o espaçamento fantasma de elementos inline -->
-        <img src="./assets/Design TECAP/Fotos/Mulher.webp" alt="Legislação" class="img-fluid mb-0 d-block w-100" style="vertical-align: bottom;" />
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- DIFERENCIAIS -->
   <section id="diferenciais" class="section-padding bg-tecap-gray">
@@ -911,14 +897,15 @@
       });
 
       // ============================================
-      // ANIMAÇÃO ON SCROLL
+      // ANIMAÇÃO ON SCROLL – USANDO APENAS CSS (SEM animate.css)
       // ============================================
       const animElements = document.querySelectorAll('.animate-on-scroll');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+            // removemos as classes do animate.css para não conflitar
+            entry.target.classList.remove('animate__animated', 'animate__fadeInUp');
           }
         });
       }, { threshold: 0.15, rootMargin: '0px 0px -20px 0px' });
