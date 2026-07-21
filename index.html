@@ -3,191 +3,195 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TECAP – Solução Cloud para EFD-Reinf</title>
-  <!-- Bootstrap 5 + Icons + Animate.css -->
+  
+  <!-- ========== SEO PERFEITO ========== -->
+  <title>TECAP – Solução Cloud para EFD-Reinf | Automação Fiscal</title>
+  <meta name="description" content="Sistema exclusivo para EFD-Reinf com automação total. Importação automática de notas fiscais do SIAFI/Tesouro Gerencial." />
+  <meta name="keywords" content="EFD-Reinf, SIAFI, Tesouro Gerencial, autorregularização, portaria 632, TECAP" />
+  <link rel="canonical" href="./assets/Design TECAP/Logo/SVG/Logo Clara sem Background – com frase.svg" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tecap.tech/" />
+  <meta property="og:title" content="TECAP – Solução Cloud para EFD-Reinf" />
+  <meta property="og:description" content="Sistema exclusivo para EFD-Reinf com automação total. Importação automática de notas fiscais do SIAFI/Tesouro Gerencial." />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630/2f3262/ffffff?text=TECAP" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TECAP – Solução Cloud para EFD-Reinf" />
+  <meta name="twitter:description" content="Sistema exclusivo para EFD-Reinf com automação total." />
+  <meta name="twitter:image" content="https://via.placeholder.com/1200x630/2f3262/ffffff?text=TECAP" />
+
+  <!-- Dados Estruturados (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TECAP Inovações Tecnológicas",
+    "url": "https://tecap.tech",
+    "logo": "https://via.placeholder.com/200x60/2f3262/ffffff?text=TECAP",
+    "description": "Solução Cloud para EFD-Reinf com automação e segurança.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+5511988505506",
+      "contactType": "Sales",
+      "areaServed": "BR",
+      "availableLanguage": "Portuguese"
+    }
+  }
+  </script>
+
+  <!-- ========== GOOGLE ANALYTICS 4 ========== -->
+  <!-- Substitua G-XXXXXXXXXX pelo seu ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+    gtag('event', 'page_view', {
+      'page_title': 'TECAP - Home',
+      'page_location': window.location.href
+    });
+  </script>
+
+  <!-- ========== BOOTSTRAP 5 + ICONS ========== -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <!-- Google Fonts (Inter) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+
   <style>
-    /* Reset / base - novas cores */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #0b1a2e; overflow-x: hidden; }
-    
-    /* Nova paleta de cores */
+    /* ===== ESTILOS GERAIS ===== */
     :root {
       --tecap-dark: rgb(47, 50, 98);
       --tecap-primary: rgb(50, 54, 104);
       --tecap-light: #eef0f7;
       --tecap-gray: #f1f5f9;
-      --tecap-text: #0b1a2e;
-      --tecap-white: #ffffff;
+      --font-size-base: 16px;
     }
-    
-    .bg-tecap-dark { background: rgb(47, 50, 98); }
-    .bg-tecap-primary { background: rgb(50, 54, 104); }
-    .bg-tecap-light { background: #eef0f7; }
-    .bg-tecap-gray { background: #f1f5f9; }
-    .text-tecap-dark { color: rgb(47, 50, 98); }
-    .text-tecap-primary { color: rgb(50, 54, 104); }
-    
-    .btn-tecap { 
-      background: rgb(50, 54, 104); 
-      color: #fff; 
-      border-radius: 50px; 
-      padding: 0.7rem 2rem; 
-      font-weight: 600; 
-      transition: 0.3s; 
-      border: none; 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #0b1a2e;
+      font-size: var(--font-size-base);
+      transition: background 0.3s, color 0.3s;
     }
-    .btn-tecap:hover { 
-      background: rgb(35, 38, 75); 
-      color: #fff; 
-      transform: scale(1.02); 
+    .bg-tecap-dark { background: var(--tecap-dark) !important; }
+    .bg-tecap-primary { background: var(--tecap-primary) !important; }
+    .bg-tecap-light { background: var(--tecap-light) !important; }
+    .bg-tecap-gray { background: var(--tecap-gray) !important; }
+    .text-tecap-dark { color: var(--tecap-dark) !important; }
+    .text-tecap-primary { color: var(--tecap-primary) !important; }
+
+    .btn-tecap {
+      background: var(--tecap-primary);
+      color: #fff;
+      border-radius: 50px;
+      padding: 0.7rem 2rem;
+      font-weight: 600;
+      border: none;
+      transition: 0.3s;
     }
-    .btn-outline-tecap { 
-      border: 2px solid rgb(50, 54, 104); 
-      color: rgb(50, 54, 104); 
-      border-radius: 50px; 
-      padding: 0.7rem 2rem; 
-      font-weight: 600; 
-      transition: 0.3s; 
+    .btn-tecap:hover { background: var(--tecap-dark); color: #fff; transform: scale(1.02); }
+    .btn-outline-tecap {
+      border: 2px solid var(--tecap-primary);
+      color: var(--tecap-primary);
+      border-radius: 50px;
+      padding: 0.7rem 2rem;
+      font-weight: 600;
       background: transparent;
+      transition: 0.3s;
     }
-    .btn-outline-tecap:hover { 
-      background: rgb(50, 54, 104); 
-      color: #fff; 
-    }
+    .btn-outline-tecap:hover { background: var(--tecap-primary); color: #fff; }
 
-    /* seções com fundo alternado */
     .section-padding { padding: 4rem 0; }
-
-    /* cards diferenciais */
-    .card-diff { 
-      background: #ffffff; 
-      border-radius: 20px; 
-      padding: 2rem 1.5rem; 
-      box-shadow: 0 12px 30px rgba(47,50,98,0.08); 
-      transition: 0.3s; 
-      height: 100%; 
-      border: 1px solid rgba(50,54,104,0.06); 
+    .card-diff {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 12px 30px rgba(47,50,98,0.08);
+      height: 100%;
+      border: 1px solid rgba(50,54,104,0.06);
+      transition: 0.3s;
     }
-    .card-diff:hover { 
-      transform: translateY(-8px); 
-      box-shadow: 0 24px 48px rgba(47,50,98,0.12); 
-      border-color: rgba(50,54,104,0.15); 
-    }
-    .card-diff i { 
-      font-size: 2.8rem; 
-      color: rgb(50, 54, 104); 
-      margin-bottom: 1rem; 
-    }
-    .card-diff h5, .card-diff h6 { color: rgb(47, 50, 98); }
-
-    /* hero lottie placeholder - modificado para ocupar toda largura */
-    .lottie-placeholder { 
-      width: 100%; 
-      max-width: 100%; 
-      margin: 0 auto; 
-    }
-    .lottie-placeholder img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      display: block;
+    .card-diff:hover { transform: translateY(-8px); box-shadow: 0 24px 48px rgba(47,50,98,0.12); }
+    .card-diff i { font-size: 2.8rem; color: var(--tecap-primary); margin-bottom: 1rem; }
+    .feedback-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 2rem;
+      border-left: 6px solid var(--tecap-primary);
     }
 
-    /* feedbacks */
-    .feedback-card { 
-      background: white; 
-      border-radius: 24px; 
-      padding: 2rem; 
-      box-shadow: 0 8px 24px rgba(0,0,0,0.02); 
-      border-left: 6px solid rgb(50, 54, 104); 
+    .navbar-tecap {
+      background: rgba(47, 50, 98, 0.95) !important;
+      backdrop-filter: blur(8px);
     }
-
-    /* navegação fixa com blur - nova cor */
-    .navbar-tecap { 
-      background: rgba(47, 50, 98, 0.95) !important; 
-      backdrop-filter: blur(8px); 
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
-    }
-    .navbar-tecap .navbar-brand img { height: 40px; }
-    .navbar-tecap .nav-link { 
-      color: rgba(255,255,255,0.8) !important; 
-      font-weight: 500; 
-      margin: 0 0.25rem; 
-      transition: 0.2s; 
+    .navbar-tecap .nav-link {
+      color: rgba(255,255,255,0.8) !important;
+      font-weight: 500;
+      margin: 0 0.25rem;
+      transition: 0.2s;
     }
     .navbar-tecap .nav-link:hover { color: #fff !important; }
-    .navbar-tecap .nav-link.active { 
-      color: #fff !important; 
-      background: rgba(255,255,255,0.12); 
-      border-radius: 30px; 
+    .navbar-tecap .nav-link.active {
+      color: #fff !important;
+      background: rgba(255,255,255,0.12);
+      border-radius: 30px;
     }
 
-    /* ANIMAÇÃO ON SCROLL – AGORA VEM DE TRÁS (zoom) SEM SOBREPOR */
-    .animate-on-scroll { 
-      opacity: 0; 
-      transform: scale(0.90);         /* começa um pouco menor (profundidade) */
-      transition: opacity 0.8s ease, transform 0.8s ease; 
-    }
-    .animate-on-scroll.visible { 
-      opacity: 1; 
-      transform: scale(1);            /* volta ao tamanho normal */
+    .hero-tecap {
+      background: linear-gradient(145deg, var(--tecap-dark), var(--tecap-primary));
+      color: white;
+      padding: 4rem 0 0;
+      margin-top: 70px;
     }
 
-    /* botão flutuante */
-    .btn-floating-orc { 
-      position: fixed; 
-      bottom: 24px; 
-      right: 24px; 
-      z-index: 999; 
-      background: rgb(50, 54, 104); 
-      color: #fff; 
-      border-radius: 60px; 
-      padding: 0.8rem 1.8rem; 
-      box-shadow: 0 8px 28px rgba(50,54,104,0.4); 
-      border: none; 
-      font-weight: 600; 
-      display: flex; 
-      align-items: center; 
-      gap: 8px; 
-      transition: 0.3s; 
-      text-decoration: none;
+    .animate-on-scroll {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity 0.8s, transform 0.8s;
     }
-    .btn-floating-orc:hover { 
-      background: rgb(35, 38, 75); 
-      transform: scale(1.04); 
-      color: #fff; 
-    }
+    .animate-on-scroll.visible { opacity: 1; transform: scale(1); }
 
-    /* Badge personalizado */
     .badge-tecap {
-      background: rgba(50, 54, 104, 0.10);
-      color: rgb(50, 54, 104);
+      background: rgba(50,54,104,0.10);
+      color: var(--tecap-primary);
       padding: 0.5rem 1.5rem;
       border-radius: 50px;
       font-weight: 600;
     }
     .badge-tecap-white {
       background: rgba(255,255,255,0.10);
-      color: #ffffff;
+      color: #fff;
       padding: 0.5rem 1.5rem;
       border-radius: 50px;
       font-weight: 600;
     }
 
-    /* Hero com gradiente nas novas cores */
-    .hero-tecap {
-      background: linear-gradient(145deg, rgb(47, 50, 98) 0%, rgb(50, 54, 104) 100%);
-      color: white;
+    /* Botão flutuante */
+    .btn-floating-orc {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      background: var(--tecap-primary);
+      color: #fff;
+      border-radius: 60px;
+      padding: 0.8rem 1.8rem;
+      box-shadow: 0 8px 28px rgba(50,54,104,0.4);
+      border: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+      text-decoration: none;
     }
+    .btn-floating-orc:hover { background: var(--tecap-dark); transform: scale(1.04); color: #fff; }
 
-    /* Honeypot - campo escondido para bots */
+    /* Honeypot (campo escondido) */
     .honeypot-field {
       position: absolute;
       left: -9999px;
@@ -199,7 +203,7 @@
       overflow: hidden;
     }
 
-    /* Toast de notificação */
+    /* Toast */
     .toast-container {
       position: fixed;
       top: 20px;
@@ -211,33 +215,22 @@
       border-radius: 12px;
       padding: 16px 24px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-      border-left: 5px solid rgb(50, 54, 104);
+      border-left: 5px solid var(--tecap-primary);
       min-width: 280px;
       max-width: 400px;
       animation: slideInRight 0.4s ease;
       margin-bottom: 12px;
     }
-    .toast-custom.error {
-      border-left-color: #dc3545;
-    }
-    .toast-custom.success {
-      border-left-color: #28a745;
-    }
-    .toast-custom .toast-title {
-      font-weight: 600;
-      color: rgb(47, 50, 98);
-      margin-bottom: 4px;
-    }
-    .toast-custom .toast-message {
-      color: #555;
-      font-size: 0.9rem;
-    }
+    .toast-custom.error { border-left-color: #dc3545; }
+    .toast-custom.success { border-left-color: #28a745; }
+    .toast-custom .toast-title { font-weight: 600; color: var(--tecap-dark); margin-bottom: 4px; }
+    .toast-custom .toast-message { color: #555; font-size: 0.9rem; }
     @keyframes slideInRight {
       from { transform: translateX(100%); opacity: 0; }
       to { transform: translateX(0); opacity: 1; }
     }
 
-    /* Spinner de carregamento */
+    /* Spinner */
     .spinner-overlay {
       display: none;
       position: fixed;
@@ -250,9 +243,7 @@
       justify-content: center;
       align-items: center;
     }
-    .spinner-overlay.active {
-      display: flex;
-    }
+    .spinner-overlay.active { display: flex; }
     .spinner-box {
       background: #fff;
       padding: 30px 40px;
@@ -261,16 +252,121 @@
       box-shadow: 0 16px 48px rgba(0,0,0,0.2);
     }
 
+    /* ===== ASSISTENTE DE AJUDA ===== */
+    .help-assistant {
+      position: fixed;
+      bottom: 90px;
+      right: 24px;
+      z-index: 998;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .help-toggle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--tecap-primary);
+      color: #fff;
+      border: none;
+      font-size: 28px;
+      box-shadow: 0 8px 24px rgba(50,54,104,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .help-toggle:hover { transform: scale(1.08); background: var(--tecap-dark); }
+    .help-panel {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+      width: 320px;
+      max-width: 90vw;
+      padding: 1.5rem;
+      margin-bottom: 16px;
+      display: none;
+      animation: slideUp 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    .help-panel.open { display: block; }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .help-panel .list-group-item { border: none; padding: 0.5rem 0; background: transparent; }
+    .help-panel .list-group-item a { color: var(--tecap-primary); text-decoration: none; }
+    .help-panel .list-group-item a:hover { text-decoration: underline; }
+
+    /* ===== ACESSIBILIDADE ===== */
+    .accessibility-toolbar {
+      position: fixed;
+      bottom: 160px;
+      left: 24px;
+      z-index: 997;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(8px);
+      padding: 12px 10px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    .accessibility-toolbar button {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: none;
+      background: transparent;
+      color: var(--tecap-dark);
+      font-size: 18px;
+      transition: 0.2s;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .accessibility-toolbar button:hover { background: var(--tecap-light); color: var(--tecap-primary); }
+    .accessibility-toolbar .divider { width: 100%; height: 1px; background: #ddd; margin: 4px 0; }
+
+    /* Alto contraste */
+    body.contrast-high {
+      --tecap-dark: #000;
+      --tecap-primary: #0000cc;
+      --tecap-light: #e0e0e0;
+      --tecap-gray: #cccccc;
+      background: #fff !important;
+      color: #000 !important;
+    }
+    body.contrast-high .card-diff,
+    body.contrast-high .feedback-card,
+    body.contrast-high .bg-white {
+      background: #fff !important;
+      border: 2px solid #000 !important;
+    }
+    body.contrast-high .bg-tecap-gray { background: #e0e0e0 !important; }
+    body.contrast-high .bg-tecap-light { background: #d0d0d0 !important; }
+
+    /* Ajuste de fonte */
+    body.font-large { --font-size-base: 20px; }
+    body.font-xlarge { --font-size-base: 24px; }
+
     @media (max-width: 768px) {
       .section-padding { padding: 2.5rem 0; }
       .btn-floating-orc { padding: 0.6rem 1.4rem; font-size: 0.9rem; right: 16px; bottom: 16px; }
-      .toast-container { right: 10px; left: 10px; }
-      .toast-custom { min-width: auto; }
+      .accessibility-toolbar { left: 10px; bottom: 130px; padding: 8px 6px; }
+      .accessibility-toolbar button { width: 34px; height: 34px; font-size: 15px; }
+      .help-panel { width: 280px; right: 10px; left: auto; }
+      .help-assistant { right: 10px; bottom: 80px; }
     }
   </style>
 </head>
 <body>
-  <!-- SPINNER OVERLAY -->
+
+  <!-- ===== SPINNER ===== -->
   <div class="spinner-overlay" id="spinnerOverlay">
     <div class="spinner-box">
       <div class="spinner-border text-tecap-primary" role="status" style="width: 3rem; height: 3rem;">
@@ -280,16 +376,53 @@
     </div>
   </div>
 
-  <!-- TOAST CONTAINER -->
+  <!-- ===== TOAST ===== -->
   <div class="toast-container" id="toastContainer"></div>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-tecap fixed-top py-2">
+  <!-- ===== ACESSIBILIDADE ===== -->
+  <div class="accessibility-toolbar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+    <button id="aumentarFonte" aria-label="Aumentar fonte" title="Aumentar fonte">
+      <i class="bi bi-zoom-in"></i>
+    </button>
+    <button id="diminuirFonte" aria-label="Diminuir fonte" title="Diminuir fonte">
+      <i class="bi bi-zoom-out"></i>
+    </button>
+    <div class="divider"></div>
+    <button id="toggleContraste" aria-label="Alto contraste" title="Alto contraste">
+      <i class="bi bi-circle-half"></i>
+    </button>
+    <div class="divider"></div>
+    <button id="resetAcessibilidade" aria-label="Redefinir configurações" title="Redefinir">
+      <i class="bi bi-arrow-counterclockwise"></i>
+    </button>
+  </div>
+
+  <!-- ===== ASSISTENTE DE AJUDA (versão estável) ===== -->
+  <div class="help-assistant" role="complementary" aria-label="Assistente de ajuda">
+    <div class="help-panel" id="helpPanel">
+      <h6><i class="bi bi-robot me-2"></i>Como posso ajudar?</h6>
+      <ul class="list-group">
+        <li class="list-group-item"><a href="#sistema"><i class="bi bi-gear me-2"></i>Como funciona o sistema?</a></li>
+        <li class="list-group-item"><a href="#leis"><i class="bi bi-file-text me-2"></i>Legislação aplicável</a></li>
+        <li class="list-group-item"><a href="#orcamento"><i class="bi bi-chat-dots me-2"></i>Falar com um especialista</a></li>
+        <li class="list-group-item"><a href="#" onclick="showToast('💡 Dica', 'Você pode ajustar a fonte e o contraste usando os botões no canto inferior esquerdo.', 'info'); return false;"><i class="bi bi-lightbulb me-2"></i>Dica de acessibilidade</a></li>
+      </ul>
+      <hr class="my-2" />
+      <p class="small text-secondary mb-0">📞 (11) 98850-5506</p>
+    </div>
+    <button class="help-toggle" id="helpToggle" aria-label="Abrir assistente" title="Ajuda">
+      <i class="bi bi-chat-dots-fill"></i>
+    </button>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-tecap fixed-top py-3" role="navigation" aria-label="Menu principal">
     <div class="container px-4 px-lg-5">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="#" aria-label="TECAP - Página inicial">
+        <!-- Substitua o src pela sua logo -->
         <img src="./assets/Design TECAP/Logo/PNG/Logo Clara sem Background – com frase.png" alt="TECAP" height="40" />
       </a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
         <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -305,8 +438,8 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section id="home" class="hero-tecap pb-0" style="margin-top: 70px;">
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero-tecap pb-0" role="banner">
     <div class="container px-4 px-lg-5">
       <div class="row align-items-end g-5">
         <div class="col-lg-6 animate-on-scroll py-5">
@@ -316,16 +449,15 @@
           <a href="#sistema" class="btn btn-outline-light btn-lg">Saiba mais</a>
         </div>
         <div class="col-lg-5 text-center animate-on-scroll">
-          <div class="lottie-placeholder" style="margin-bottom: 0; padding-bottom: 0;">
-            <img src="./assets/Design TECAP/Fotos/Homem.png" class="img-fluid mb-0 d-block w-100" alt="Ilustração de automação" style="vertical-align: bottom;" />
-          </div>
+          <!-- Substitua pela sua imagem ilustrativa -->
+          <img src="./assets/Design TECAP/Fotos/Homem.png" class="img-fluid d-block w-100" alt="Ilustração de automação" style="vertical-align: bottom;" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SISTEMA -->
-  <section id="sistema" class="section-padding bg-tecap-gray">
+  <!-- ===== SISTEMA ===== -->
+  <section id="sistema" class="section-padding bg-tecap-gray" role="main">
     <div class="container">
       <div class="text-center mb-5 animate-on-scroll">
         <h2 class="display-5 fw-semibold mt-3 text-tecap-dark">Para órgãos públicos e administração</h2>
@@ -334,21 +466,21 @@
       <div class="row g-4">
         <div class="col-md-4 animate-on-scroll">
           <div class="card-diff text-center">
-            <i class="bi bi-building"></i>
+            <i class="bi bi-building" aria-hidden="true"></i>
             <h5 class="fw-bold">Órgãos Públicos</h5>
             <p class="text-secondary">Extração automática do Tesouro Gerencial do SIAFI, com ambiente dedicado.</p>
           </div>
         </div>
         <div class="col-md-4 animate-on-scroll">
           <div class="card-diff text-center">
-            <i class="bi bi-robot"></i>
+            <i class="bi bi-robot" aria-hidden="true"></i>
             <h5 class="fw-bold">Preenchimento automático</h5>
             <p class="text-secondary">Eventos R-2010, R-2055, R-4010, R-4020 preenchidos com precisão.</p>
           </div>
         </div>
         <div class="col-md-4 animate-on-scroll">
           <div class="card-diff text-center">
-            <i class="bi bi-file-spreadsheet"></i>
+            <i class="bi bi-file-spreadsheet" aria-hidden="true"></i>
             <h5 class="fw-bold">Arquivos XLS → XML</h5>
             <p class="text-secondary">Conversão simples e rápida dos arquivos do tesouro gerencial.</p>
           </div>
@@ -357,7 +489,7 @@
     </div>
   </section>
 
-  <!-- LEGISLAÇÃO -->
+  <!-- ===== LEGISLAÇÃO ===== -->
   <section id="leis" class="pt-5 pb-0" style="background: #ffffff;">
     <div class="container">
       <div class="row align-items-end g-5">
@@ -366,20 +498,21 @@
           <h2 class="display-5 fw-semibold mt-3 text-tecap-dark">Fique em conformidade com a IN RFB nº 2043/2021</h2>
           <p class="text-secondary">A EFD-Reinf é obrigatória para órgãos públicos desde março de 2023. O TECAP garante a entrega dentro do prazo, sem multas.</p>
           <ul class="list-unstyled mt-4">
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-tecap-primary me-2"></i>Pagamentos PF (R-4010) e PJ (R-4020)</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-tecap-primary me-2"></i>Autorregularização com a Portaria RFB nº 632/2025</li>
-            <li><i class="bi bi-check-circle-fill text-tecap-primary me-2"></i>Ambiente Cloud com backup diário</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-tecap-primary me-2" aria-hidden="true"></i>Pagamentos PF (R-4010) e PJ (R-4020)</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-tecap-primary me-2" aria-hidden="true"></i>Autorregularização com a Portaria RFB nº 632/2025</li>
+            <li><i class="bi bi-check-circle-fill text-tecap-primary me-2" aria-hidden="true"></i>Ambiente Cloud com backup diário</li>
           </ul>
-          <a href="./portaria.html" class="btn btn-outline-tecap mt-3">Leia a portaria</a>
+          <a href="./portaria.html" class="btn btn-outline-tecap mt-3" aria-label="Leia a portaria na íntegra">Leia a portaria</a>
         </div>
         <div class="col-lg-6 order-lg-1 text-center animate-on-scroll">
-          <img src="./assets/Design TECAP/Fotos/Mulher.webp" alt="Legislação" class="img-fluid mb-0 d-block w-100" style="vertical-align: bottom;" />
+          <!-- Substitua pela sua imagem -->
+          <img src="./assets/Design TECAP/Fotos/Mulher.webp" alt="Legislação" class="img-fluid d-block w-100" style="vertical-align: bottom;" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DIFERENCIAIS -->
+  <!-- ===== DIFERENCIAIS ===== -->
   <section id="diferenciais" class="section-padding bg-tecap-gray">
     <div class="container">
       <div class="text-center mb-5 animate-on-scroll">
@@ -389,28 +522,28 @@
       <div class="row g-4">
         <div class="col-md-3 col-sm-6 animate-on-scroll">
           <div class="card-diff text-center">
-            <i class="bi bi-shield-check"></i>
+            <i class="bi bi-shield-check" aria-hidden="true"></i>
             <h6 class="fw-bold">Segurança</h6>
             <p class="small text-secondary">Tecnologia avançada para proteção das informações.</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 animate-on-scroll">
           <div class="card-diff text-center">
-            <i class="bi bi-speedometer2"></i>
+            <i class="bi bi-speedometer2" aria-hidden="true"></i>
             <h6 class="fw-bold">Agilidade</h6>
             <p class="small text-secondary">Processos otimizados para operação mais rápida.</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 animate-on-scroll">
           <div class="card-diff text-center">
-            <i class="bi bi-database-check"></i>
+            <i class="bi bi-database-check" aria-hidden="true"></i>
             <h6 class="fw-bold">Confiabilidade</h6>
             <p class="small text-secondary">Rigoroso controle de qualidade dos dados.</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 animate-on-scroll">
           <div class="card-diff text-center">
-            <i class="bi bi-cloud-download"></i>
+            <i class="bi bi-cloud-download" aria-hidden="true"></i>
             <h6 class="fw-bold">Extração automática</h6>
             <p class="small text-secondary">Economia de tempo e aumento de produtividade.</p>
           </div>
@@ -419,8 +552,8 @@
     </div>
   </section>
 
-  <!-- FEEDBACKS -->
-  <section class="section-padding" style="background: linear-gradient(135deg, rgb(47, 50, 98) 0%, rgb(50, 54, 104) 100%); color: white;">
+  <!-- ===== FEEDBACKS ===== -->
+  <section class="section-padding" style="background: linear-gradient(135deg, var(--tecap-dark), var(--tecap-primary)); color: white;">
     <div class="container">
       <div class="text-center mb-5 animate-on-scroll">
         <span class="badge-tecap-white">Feedbacks</span>
@@ -449,70 +582,58 @@
     </div>
   </section>
 
-  <!-- ORÇAMENTO com proteção anti-spam -->
+  <!-- ===== ORÇAMENTO (Netlify Forms) ===== -->
   <section id="orcamento" class="section-padding bg-tecap-gray">
     <div class="container">
       <div class="row justify-content-center animate-on-scroll">
         <div class="col-lg-8 col-xl-7">
           <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm position-relative">
             <h3 class="fw-bold text-center mb-4 text-tecap-dark">Preencha o formulário e saiba mais</h3>
-            
-            <form id="formOrcamento" class="needs-validation" novalidate autocomplete="off">
-              <!-- HONEYPOT - Campo escondido para bots -->
+
+            <!-- ATENÇÃO: data-netlify="true" é obrigatório -->
+            <form id="formOrcamento" name="contato" method="POST" data-netlify="true" netlify-honeypot="website" class="needs-validation" novalidate autocomplete="off">
+              <!-- Honeypot (Netlify) -->
               <div class="honeypot-field">
                 <label for="website">Website</label>
                 <input type="text" id="website" name="website" value="" tabindex="-1" autocomplete="off" />
               </div>
 
-              <!-- TIMESTAMP - Prevenção de submissão rápida (bots) -->
+              <input type="hidden" name="form-name" value="contato" />
               <input type="hidden" id="formTimestamp" name="formTimestamp" value="" />
 
               <div class="row g-3">
                 <div class="col-md-6">
                   <label for="nome" class="form-label fw-semibold">Nome <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control form-control-lg" id="nome" name="nome" 
-                         placeholder="Seu nome" required 
-                         minlength="2" maxlength="100"
-                         pattern="[A-Za-zÀ-ÿ\s]+" 
-                         title="Apenas letras e espaços" />
+                  <input type="text" class="form-control form-control-lg" id="nome" name="nome" placeholder="Seu nome" required minlength="2" maxlength="100" pattern="[A-Za-zÀ-ÿ\s]+" />
                   <div class="invalid-feedback">Nome é obrigatório (mínimo 2 caracteres).</div>
                 </div>
                 <div class="col-md-6">
                   <label for="email" class="form-label fw-semibold">E-mail <span class="text-danger">*</span></label>
-                  <input type="email" class="form-control form-control-lg" id="email" name="email" 
-                         placeholder="exemplo@dominio.com" required 
-                         maxlength="100" />
+                  <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="exemplo@dominio.com" required maxlength="100" />
                   <div class="invalid-feedback">E-mail válido é obrigatório.</div>
                 </div>
                 <div class="col-md-6">
                   <label for="telefone" class="form-label fw-semibold">Telefone <span class="text-danger">*</span></label>
-                  <input type="tel" class="form-control form-control-lg" id="telefone" name="telefone" 
-                         placeholder="(11) 99999-9999" required 
-                         pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" 
-                         title="Formato: (99) 99999-9999" />
-                  <div class="invalid-feedback">Telefone é obrigatório (formato: (99) 99999-9999).</div>
+                  <input type="tel" class="form-control form-control-lg" id="telefone" name="telefone" placeholder="(11) 99999-9999" required pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" />
+                  <div class="invalid-feedback">Formato: (99) 99999-9999</div>
                 </div>
                 <div class="col-md-6">
                   <label for="orgao" class="form-label fw-semibold">Órgão <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control form-control-lg" id="orgao" name="orgao" 
-                         placeholder="Nome do órgão" required 
-                         minlength="2" maxlength="100" />
+                  <input type="text" class="form-control form-control-lg" id="orgao" name="orgao" placeholder="Nome do órgão" required minlength="2" maxlength="100" />
                   <div class="invalid-feedback">Órgão é obrigatório.</div>
                 </div>
                 <div class="col-12">
                   <label for="mensagem" class="form-label fw-semibold">Mensagem</label>
-                  <textarea class="form-control form-control-lg" id="mensagem" name="mensagem" 
-                            rows="3" placeholder="Sua mensagem..." 
-                            maxlength="1000"></textarea>
+                  <textarea class="form-control form-control-lg" id="mensagem" name="mensagem" rows="3" placeholder="Sua mensagem..." maxlength="1000"></textarea>
                   <div class="form-text text-secondary" id="charCount">0 / 1000 caracteres</div>
                 </div>
                 <div class="col-12">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="consentimento" name="consentimento" required />
                     <label class="form-check-label small" for="consentimento">
-                      Concordo que meus dados sejam utilizados para contato conforme a <a href="#" class="text-tecap-primary">Política de Privacidade</a>. <span class="text-danger">*</span>
+                      Concordo com a <a href="#" class="text-tecap-primary">Política de Privacidade</a>. <span class="text-danger">*</span>
                     </label>
-                    <div class="invalid-feedback">Você precisa concordar com o uso dos dados.</div>
+                    <div class="invalid-feedback">Você precisa concordar.</div>
                   </div>
                 </div>
                 <div class="col-12 mt-4">
@@ -522,11 +643,9 @@
                 </div>
               </div>
             </form>
+
             <p class="text-center text-secondary small mt-3">
-              <i class="bi bi-shield-lock-fill me-1"></i> Seus dados estão seguros e protegidos contra spam
-            </p>
-            <p class="text-center text-secondary small" style="font-size: 0.75rem;">
-              <i class="bi bi-robot me-1"></i> Proteção anti-bot ativa
+              <i class="bi bi-shield-lock-fill me-1"></i> Seus dados estão seguros
             </p>
           </div>
         </div>
@@ -534,17 +653,17 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-tecap-dark text-white pt-5 pb-3">
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-tecap-dark text-white pt-5 pb-3" role="contentinfo">
     <div class="container">
       <div class="row g-4">
         <div class="col-md-4">
           <h5 class="fw-bold">TECAP</h5>
           <p class="text-white-50 small">Solução Cloud para EFD-Reinf com automação e segurança.</p>
           <div class="d-flex gap-3 mt-3">
-            <a href="#" class="text-white-50"><i class="bi bi-facebook fs-5"></i></a>
-            <a href="#" class="text-white-50"><i class="bi bi-instagram fs-5"></i></a>
-            <a href="#" class="text-white-50"><i class="bi bi-youtube fs-5"></i></a>
+            <a href="#" class="text-white-50" aria-label="Facebook"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="#" class="text-white-50" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
+            <a href="#" class="text-white-50" aria-label="YouTube"><i class="bi bi-youtube fs-5"></i></a>
           </div>
         </div>
         <div class="col-md-4">
@@ -569,118 +688,92 @@
     </div>
   </footer>
 
-  <!-- BOTÃO FLUTUANTE -->
-  <a href="#orcamento" class="btn btn-floating-orc d-lg-none">
+  <!-- ===== BOTÃO FLUTUANTE ===== -->
+  <a href="#orcamento" class="btn btn-floating-orc d-lg-none" aria-label="Ir para formulário de contato">
     <i class="bi bi-chat-dots"></i> Quero Conhecer
   </a>
 
-  <!-- Bootstrap + JS -->
+  <!-- ===== SCRIPTS ===== -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     (function() {
       'use strict';
 
-      // ============================================
-      // PROTEÇÃO ANTI-SPAM E ANTI-VÍRUS
-      // ============================================
+      // ==========================================
+      // ACESSIBILIDADE
+      // ==========================================
+      let currentFontSize = 16;
+      const body = document.body;
 
-      // 1. HONEYPOT - Campo escondido que bots preenchem
-      const honeypot = document.getElementById('website');
-      
-      // 2. TIMESTAMP - Prevenção de submissão muito rápida (bots)
-      document.getElementById('formTimestamp').value = Date.now();
-
-      // 3. SANITIZAÇÃO - Remove tags HTML e caracteres perigosos
-      function sanitizeInput(input) {
-        if (!input) return '';
-        // Remove tags HTML
-        let sanitized = input.replace(/<[^>]*>/g, '');
-        // Remove possíveis scripts
-        sanitized = sanitized.replace(/javascript:/gi, '');
-        sanitized = sanitized.replace(/on\w+=/gi, '');
-        // Remove caracteres de controle
-        sanitized = sanitized.replace(/[\x00-\x1F\x7F]/g, '');
-        // Limita espaços em branco excessivos
-        sanitized = sanitized.replace(/\s{2,}/g, ' ');
-        return sanitized.trim();
-      }
-
-      // 4. VALIDAÇÃO DE EMAIL com verificação de domínio
-      function isValidEmail(email) {
-        const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
-        if (!emailRegex.test(email)) return false;
-        
-        // Bloqueia domínios temporários e suspeitos
-        const blockedDomains = [
-          'tempmail', 'guerrillamail', 'throwaway', 'mailinator', 
-          '10minute', 'yopmail', 'disposable', 'spamgourmet'
-        ];
-        const domain = email.split('@')[1].toLowerCase();
-        for (let blocked of blockedDomains) {
-          if (domain.includes(blocked)) return false;
+      document.getElementById('aumentarFonte').addEventListener('click', function() {
+        if (currentFontSize < 28) {
+          currentFontSize += 2;
+          body.style.fontSize = currentFontSize + 'px';
+          document.documentElement.style.setProperty('--font-size-base', currentFontSize + 'px');
+          if (typeof gtag !== 'undefined') gtag('event', 'accessibility', { 'action': 'font_increase' });
         }
-        return true;
-      }
+      });
 
-      // 5. VALIDAÇÃO DE TELEFONE (formato brasileiro)
-      function isValidPhone(phone) {
-        const phoneRegex = /^\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}$/;
-        return phoneRegex.test(phone);
-      }
-
-      // 6. VALIDAÇÃO DE NOME (apenas letras e espaços)
-      function isValidName(name) {
-        return /^[A-Za-zÀ-ÿ\s]{2,100}$/.test(name);
-      }
-
-      // 7. VALIDAÇÃO DE ÓRGÃO
-      function isValidOrgao(orgao) {
-        return orgao.length >= 2 && orgao.length <= 100;
-      }
-
-      // 8. VERIFICAÇÃO DE CONTEÚDO SUSPEITO (possível XSS ou SQL Injection)
-      function hasSuspiciousContent(text) {
-        const patterns = [
-          /<script/i,
-          /<\/script/i,
-          /<iframe/i,
-          /<object/i,
-          /<embed/i,
-          /onerror/i,
-          /onload/i,
-          /onclick/i,
-          /select.*from/i,
-          /union.*select/i,
-          /insert.*into/i,
-          /delete.*from/i,
-          /drop.*table/i,
-          /--/,
-          /;.*--/,
-          /'/,
-          /"/,
-          /\\/
-        ];
-        for (let pattern of patterns) {
-          if (pattern.test(text)) return true;
+      document.getElementById('diminuirFonte').addEventListener('click', function() {
+        if (currentFontSize > 14) {
+          currentFontSize -= 2;
+          body.style.fontSize = currentFontSize + 'px';
+          document.documentElement.style.setProperty('--font-size-base', currentFontSize + 'px');
+          if (typeof gtag !== 'undefined') gtag('event', 'accessibility', { 'action': 'font_decrease' });
         }
-        return false;
-      }
+      });
 
-      // 9. RATE LIMITING (prevenção de submissões múltiplas)
-      let lastSubmissionTime = 0;
-      const MIN_SUBMISSION_INTERVAL = 30000; // 30 segundos
+      document.getElementById('toggleContraste').addEventListener('click', function() {
+        body.classList.toggle('contrast-high');
+        this.classList.toggle('active');
+        if (typeof gtag !== 'undefined') gtag('event', 'accessibility', { 'action': 'contrast_toggle', 'value': body.classList.contains('contrast-high') });
+      });
 
-      // ============================================
-      // TOAST NOTIFICATIONS
-      // ============================================
+      document.getElementById('resetAcessibilidade').addEventListener('click', function() {
+        body.classList.remove('contrast-high');
+        document.getElementById('toggleContraste').classList.remove('active');
+        currentFontSize = 16;
+        body.style.fontSize = '16px';
+        document.documentElement.style.setProperty('--font-size-base', '16px');
+        showToast('♿ Acessibilidade', 'Configurações redefinidas para o padrão.', 'success');
+        if (typeof gtag !== 'undefined') gtag('event', 'accessibility', { 'action': 'reset' });
+      });
+
+      // ==========================================
+      // ASSISTENTE DE AJUDA (versão estável)
+      // ==========================================
+      const helpToggle = document.getElementById('helpToggle');
+      const helpPanel = document.getElementById('helpPanel');
+
+      helpToggle.addEventListener('click', function(e) {
+        e.stopPropagation(); // Evita conflitos de clique
+        helpPanel.classList.toggle('open');
+        const isOpen = helpPanel.classList.contains('open');
+        this.innerHTML = isOpen ? '<i class="bi bi-x-lg"></i>' : '<i class="bi bi-chat-dots-fill"></i>';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'help_assistant', { 'action': isOpen ? 'open' : 'close' });
+        }
+      });
+
+      // Fecha o painel se clicar fora, com mais segurança
+      document.addEventListener('click', function(e) {
+        const isClickInside = helpPanel.contains(e.target) || helpToggle.contains(e.target);
+        if (!isClickInside && helpPanel.classList.contains('open')) {
+          helpPanel.classList.remove('open');
+          helpToggle.innerHTML = '<i class="bi bi-chat-dots-fill"></i>';
+        }
+      });
+
+      // ==========================================
+      // TOAST
+      // ==========================================
       function showToast(title, message, type = 'info') {
         const container = document.getElementById('toastContainer');
         const toast = document.createElement('div');
         toast.className = `toast-custom ${type}`;
-        const icon = type === 'success' ? 'bi-check-circle-fill' : 
-                     type === 'error' ? 'bi-x-circle-fill' : 'bi-info-circle-fill';
+        const icon = type === 'success' ? 'bi-check-circle-fill' : type === 'error' ? 'bi-x-circle-fill' : 'bi-info-circle-fill';
         toast.innerHTML = `
-          <div class="toast-title"><i class="bi ${icon} me-2" style="color: ${type === 'success' ? '#28a745' : type === 'error' ? '#dc3545' : '#1a6f9e'}"></i>${title}</div>
+          <div class="toast-title"><i class="bi ${icon} me-2" style="color: ${type === 'success' ? '#28a745' : type === 'error' ? '#dc3545' : 'var(--tecap-primary)'}"></i>${title}</div>
           <div class="toast-message">${message}</div>
         `;
         container.appendChild(toast);
@@ -692,195 +785,69 @@
         }, 5000);
       }
 
-      // ============================================
-      // SPINNER
-      // ============================================
-      function showSpinner() {
-        document.getElementById('spinnerOverlay').classList.add('active');
-      }
-      function hideSpinner() {
-        document.getElementById('spinnerOverlay').classList.remove('active');
-      }
-
-      // ============================================
+      // ==========================================
       // CONTADOR DE CARACTERES
-      // ============================================
+      // ==========================================
       const mensagem = document.getElementById('mensagem');
       const charCount = document.getElementById('charCount');
+
       mensagem.addEventListener('input', function() {
         const count = this.value.length;
         charCount.textContent = `${count} / 1000 caracteres`;
-        if (count > 900) {
-          charCount.style.color = '#dc3545';
-        } else {
-          charCount.style.color = '#6c757d';
-        }
+        charCount.style.color = count > 900 ? '#dc3545' : '#6c757d';
       });
 
-      // ============================================
-      // FORMULÁRIO - SUBMISSÃO COM PROTEÇÃO
-      // ============================================
+      // ==========================================
+      // FORMULÁRIO (Netlify Forms)
+      // ==========================================
       const form = document.getElementById('formOrcamento');
 
       form.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // --- VERIFICAÇÃO 1: HONEYPOT ---
+        // Honeypot
+        const honeypot = document.getElementById('website');
         if (honeypot.value.length > 0) {
-          // Bot preencheu o campo escondido
+          e.preventDefault();
           showToast('Acesso negado', 'Submissão bloqueada por segurança.', 'error');
           return;
         }
 
-        // --- VERIFICAÇÃO 2: TEMPO DE SUBMISSÃO (Rate Limiting) ---
-        const now = Date.now();
-        const timestamp = parseInt(document.getElementById('formTimestamp').value);
-        if (now - timestamp < 3000) {
-          // Submissão muito rápida (bot)
-          showToast('Acesso negado', 'Submissão muito rápida. Por favor, aguarde alguns segundos.', 'error');
-          return;
-        }
-        if (now - lastSubmissionTime < MIN_SUBMISSION_INTERVAL && lastSubmissionTime > 0) {
-          showToast('Aguarde', 'Você já enviou uma mensagem recentemente. Por favor, aguarde 30 segundos.', 'info');
+        // Validação HTML5
+        if (!form.checkValidity()) {
+          e.preventDefault();
+          e.stopPropagation();
+          form.classList.add('was-validated');
           return;
         }
 
-        // --- COLETA E SANITIZAÇÃO DOS DADOS ---
-        const nome = sanitizeInput(document.getElementById('nome').value);
-        const email = sanitizeInput(document.getElementById('email').value).toLowerCase();
-        const telefone = sanitizeInput(document.getElementById('telefone').value);
-        const orgao = sanitizeInput(document.getElementById('orgao').value);
-        const mensagemText = sanitizeInput(document.getElementById('mensagem').value);
-        const consentimento = document.getElementById('consentimento').checked;
-
-        // --- VERIFICAÇÃO 3: VALIDAÇÕES ---
-        if (!isValidName(nome)) {
-          showToast('Erro de validação', 'Nome inválido. Use apenas letras e espaços (mínimo 2 caracteres).', 'error');
-          document.getElementById('nome').classList.add('is-invalid');
-          return;
-        }
-        document.getElementById('nome').classList.remove('is-invalid');
-
-        if (!isValidEmail(email)) {
-          showToast('Erro de validação', 'E-mail inválido ou de domínio temporário.', 'error');
-          document.getElementById('email').classList.add('is-invalid');
-          return;
-        }
-        document.getElementById('email').classList.remove('is-invalid');
-
-        if (!isValidPhone(telefone)) {
-          showToast('Erro de validação', 'Telefone inválido. Use o formato (99) 99999-9999.', 'error');
-          document.getElementById('telefone').classList.add('is-invalid');
-          return;
-        }
-        document.getElementById('telefone').classList.remove('is-invalid');
-
-        if (!isValidOrgao(orgao)) {
-          showToast('Erro de validação', 'Órgão deve ter pelo menos 2 caracteres.', 'error');
-          document.getElementById('orgao').classList.add('is-invalid');
-          return;
-        }
-        document.getElementById('orgao').classList.remove('is-invalid');
-
-        if (!consentimento) {
-          showToast('Atenção', 'Você precisa concordar com o uso dos dados.', 'info');
-          document.getElementById('consentimento').classList.add('is-invalid');
-          return;
-        }
-        document.getElementById('consentimento').classList.remove('is-invalid');
-
-        // --- VERIFICAÇÃO 4: CONTEÚDO SUSPEITO ---
-        const fullText = `${nome} ${email} ${orgao} ${mensagemText}`;
-        if (hasSuspiciousContent(fullText)) {
-          showToast('Acesso negado', 'Conteúdo suspeito detectado. Por favor, verifique sua mensagem.', 'error');
-          return;
-        }
-
-        // --- VERIFICAÇÃO 5: MENSAGEM COM LINKS SUSPEITOS ---
-        if (mensagemText.length > 0) {
-          const urlPattern = /https?:\/\/[^\s]+/gi;
-          const urls = mensagemText.match(urlPattern);
-          if (urls) {
-            // Verifica se são domínios seguros (apenas whitelist)
-            const allowedDomains = ['tecap.tech', 'gov.br', 'receita.fazenda.gov.br'];
-            for (let url of urls) {
-              let isAllowed = false;
-              for (let domain of allowedDomains) {
-                if (url.includes(domain)) isAllowed = true;
-              }
-              if (!isAllowed) {
-                showToast('Acesso negado', 'Links para domínios não autorizados não são permitidos.', 'error');
-                return;
-              }
-            }
-          }
-        }
-
-        // --- VERIFICAÇÃO 6: PREVENÇÃO DE INJEÇÃO DE CÓDIGO ---
-        // Detecta caracteres especiais em sequência
-        const suspiciousSequences = ['<', '>', '{', '}', '[', ']', '`', ';', '||', '&&'];
-        for (let seq of suspiciousSequences) {
-          if (fullText.includes(seq)) {
-            showToast('Acesso negado', 'Caracteres especiais não permitidos.', 'error');
-            return;
-          }
-        }
-
-        // --- TODAS AS VERIFICAÇÕES PASSARAM ---
-        lastSubmissionTime = Date.now();
-
-        // --- SIMULAÇÃO DE ENVIO COM SPINNER ---
-        showSpinner();
-
+        // Mostra spinner (opcional, pois o Netlify redireciona)
         const btn = document.getElementById('submitBtn');
         const originalText = btn.innerHTML;
+        btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Enviando...';
         btn.disabled = true;
 
-        // Simula envio para o servidor (substituir por fetch real)
+        // O Netlify Forms faz o envio real.
+        // Se quiser um feedback visual, podemos restaurar após um tempo (fallback)
         setTimeout(() => {
-          hideSpinner();
-          btn.innerHTML = '<i class="bi bi-check-circle me-2"></i> Enviado com sucesso!';
-          btn.classList.add('btn-success');
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+        }, 10000);
 
-          showToast('Sucesso!', 'Sua mensagem foi enviada com segurança. Entraremos em contato em breve.', 'success');
-
-          // Reseta o formulário após 3 segundos
-          setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.disabled = false;
-            btn.classList.remove('btn-success');
-            form.reset();
-            form.classList.remove('was-validated');
-            document.getElementById('formTimestamp').value = Date.now();
-            charCount.textContent = '0 / 1000 caracteres';
-            charCount.style.color = '#6c757d';
-          }, 3000);
-
-          // LOG DE SEGURANÇA (em produção, enviar para o servidor)
-          console.log('✅ Formulário enviado com segurança:', {
-            nome, email, telefone, orgao,
-            mensagem: mensagemText.substring(0, 100) + '...',
-            timestamp: new Date().toISOString()
+        // Evento para Google Analytics
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'form_submit', {
+            'event_category': 'Contato',
+            'event_label': 'Netlify Forms'
           });
-
-        }, 2000);
+        }
       });
 
-      // ============================================
-      // REMOVE VALIDAÇÃO VISUAL AO DIGITAR
-      // ============================================
-      document.querySelectorAll('#formOrcamento .form-control, #formOrcamento .form-check-input').forEach(input => {
-        input.addEventListener('input', function() {
-          this.classList.remove('is-invalid');
-        });
-      });
-
-      // ============================================
-      // SCROLL SPY (navegação ativa)
-      // ============================================
+      // ==========================================
+      // SCROLL SPY
+      // ==========================================
       const sections = document.querySelectorAll('section[id]');
       const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-      window.addEventListener('scroll', () => {
+
+      window.addEventListener('scroll', function() {
         let current = '';
         sections.forEach(section => {
           const sectionTop = section.offsetTop - 120;
@@ -896,22 +863,24 @@
         });
       });
 
-      // ============================================
-      // ANIMAÇÃO ON SCROLL – USANDO APENAS CSS (SEM animate.css)
-      // ============================================
+      // ==========================================
+      // ANIMAÇÃO ON SCROLL
+      // ==========================================
       const animElements = document.querySelectorAll('.animate-on-scroll');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            // removemos as classes do animate.css para não conflitar
-            entry.target.classList.remove('animate__animated', 'animate__fadeInUp');
           }
         });
       }, { threshold: 0.15, rootMargin: '0px 0px -20px 0px' });
+
       animElements.forEach(el => observer.observe(el));
 
-      console.log('🛡️ TECAP - Proteção anti-spam e anti-vírus ativa');
+      console.log('✅ TECAP pronto para Netlify com Forms, SEO e acessibilidade');
+      console.log('📧 Configure as notificações do formulário no painel do Netlify');
+      console.log('📊 Substitua G-XXXXXXXXXX pelo seu ID do Google Analytics');
+      console.log('🤖 Assistente de ajuda funcionando corretamente');
     })();
   </script>
 </body>
