@@ -8,7 +8,7 @@
   <title>TECAP – Solução Cloud para EFD-Reinf | Automação Fiscal</title>
   <meta name="description" content="Sistema exclusivo para EFD-Reinf com automação total. Importação automática de notas fiscais do SIAFI/Tesouro Gerencial." />
   <meta name="keywords" content="EFD-Reinf, SIAFI, Tesouro Gerencial, autorregularização, portaria 632, TECAP" />
-  <link rel="canonical" href="./assets/Design TECAP/Logo/SVG/Logo Clara sem Background – com frase.svg" />
+  <link rel="canonical" href="https://tecap.tech/" />
   <meta name="robots" content="index, follow" />
   
   <!-- Open Graph -->
@@ -16,11 +16,11 @@
   <meta property="og:url" content="https://tecap.tech/" />
   <meta property="og:title" content="TECAP – Solução Cloud para EFD-Reinf" />
   <meta property="og:description" content="Sistema exclusivo para EFD-Reinf com automação total. Importação automática de notas fiscais do SIAFI/Tesouro Gerencial." />
-  <meta property="og:image" content="https://via.placeholder.com/1200x630/2f3262/ffffff?text=TECAP" />
+  <meta property="og:image" content="./assets/Design TECAP/Logo/PNG/Logo Clara sem Background – com frase.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="TECAP – Solução Cloud para EFD-Reinf" />
   <meta name="twitter:description" content="Sistema exclusivo para EFD-Reinf com automação total." />
-  <meta name="twitter:image" content="https://via.placeholder.com/1200x630/2f3262/ffffff?text=TECAP" />
+  <meta name="twitter:image" content="./assets/Design TECAP/Logo/PNG/Logo Clara sem Background – com frase.png" />
 
   <!-- Dados Estruturados (JSON-LD) -->
   <script type="application/ld+json">
@@ -29,7 +29,7 @@
     "@type": "Organization",
     "name": "TECAP Inovações Tecnológicas",
     "url": "https://tecap.tech",
-    "logo": "https://via.placeholder.com/200x60/2f3262/ffffff?text=TECAP",
+    "logo": "./assets/Design TECAP/Logo/PNG/Logo Clara sem Background – com frase.png",
     "description": "Solução Cloud para EFD-Reinf com automação e segurança.",
     "contactPoint": {
       "@type": "ContactPoint",
@@ -614,8 +614,8 @@
                 </div>
                 <div class="col-md-6">
                   <label for="telefone" class="form-label fw-semibold">Telefone <span class="text-danger">*</span></label>
-                  <input type="tel" class="form-control form-control-lg" id="telefone" name="telefone" placeholder="(11) 99999-9999" required pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" />
-                  <div class="invalid-feedback">Formato: (99) 99999-9999</div>
+                  <input type="tel" class="form-control form-control-lg" id="telefone" name="telefone" placeholder="18997690124" required minlength="10" maxlength="11" pattern="[0-9]{10,11}" title="Digite apenas números (mínimo 10 dígitos, exemplo: 18997690124)" />
+                  <div class="invalid-feedback">Telefone deve ter entre 10 e 11 dígitos numéricos (ex: 18997690124).</div>
                 </div>
                 <div class="col-md-6">
                   <label for="orgao" class="form-label fw-semibold">Órgão <span class="text-danger">*</span></label>
@@ -881,6 +881,7 @@
       console.log('📧 Configure as notificações do formulário no painel do Netlify');
       console.log('📊 Substitua G-XXXXXXXXXX pelo seu ID do Google Analytics');
       console.log('🤖 Assistente de ajuda funcionando corretamente');
+      console.log('📞 Telefone agora aceita apenas números (10-11 dígitos)');
     })();
   </script>
 </body>
