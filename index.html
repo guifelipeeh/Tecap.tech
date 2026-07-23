@@ -42,7 +42,6 @@
   </script>
 
   <!-- ========== GOOGLE ANALYTICS 4 ========== -->
-  <!-- Substitua G-XXXXXXXXXX pelo seu ID -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -61,7 +60,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
 
   <style>
-    /* ===== ESTILOS GERAIS ===== */
+    /* ===== ESTILOS GERAIS (MANTIDOS) ===== */
     :root {
       --tecap-dark: rgb(47, 50, 98);
       --tecap-primary: rgb(50, 54, 104);
@@ -230,7 +229,7 @@
       to { transform: translateX(0); opacity: 1; }
     }
 
-    /* Spinner */
+    /* Spinner overlay (para animação de envio) */
     .spinner-overlay {
       display: none;
       position: fixed;
@@ -243,13 +242,19 @@
       justify-content: center;
       align-items: center;
     }
-    .spinner-overlay.active { display: flex; }
+    .spinner-overlay.active {
+      display: flex;
+    }
     .spinner-box {
       background: #fff;
       padding: 30px 40px;
       border-radius: 16px;
       text-align: center;
       box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+    }
+    .spinner-box .spinner-border {
+      width: 3rem;
+      height: 3rem;
     }
 
     /* ===== ASSISTENTE DE AJUDA ===== */
@@ -366,11 +371,11 @@
 </head>
 <body>
 
-  <!-- ===== SPINNER ===== -->
+  <!-- ===== SPINNER OVERLAY (animação de envio) ===== -->
   <div class="spinner-overlay" id="spinnerOverlay">
     <div class="spinner-box">
-      <div class="spinner-border text-tecap-primary" role="status" style="width: 3rem; height: 3rem;">
-        <span class="visually-hidden">Carregando...</span>
+      <div class="spinner-border text-tecap-primary" role="status">
+        <span class="visually-hidden">Enviando...</span>
       </div>
       <p class="mt-3 fw-semibold text-tecap-dark">Enviando sua mensagem...</p>
     </div>
@@ -397,7 +402,7 @@
     </button>
   </div>
 
-  <!-- ===== ASSISTENTE DE AJUDA (versão estável) ===== -->
+  <!-- ===== ASSISTENTE DE AJUDA ===== -->
   <div class="help-assistant" role="complementary" aria-label="Assistente de ajuda">
     <div class="help-panel" id="helpPanel">
       <h6><i class="bi bi-robot me-2"></i>Como posso ajudar?</h6>
@@ -419,7 +424,6 @@
   <nav class="navbar navbar-expand-lg navbar-tecap fixed-top py-3" role="navigation" aria-label="Menu principal">
     <div class="container px-4 px-lg-5">
       <a class="navbar-brand" href="#" aria-label="TECAP - Página inicial">
-        <!-- Substitua o src pela sua logo -->
         <img src="./assets/Design TECAP/Logo/PNG/Logo Clara sem Background – com frase.png" alt="TECAP" height="40" />
       </a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
@@ -449,7 +453,6 @@
           <a href="#sistema" class="btn btn-outline-light btn-lg">Saiba mais</a>
         </div>
         <div class="col-lg-5 text-center animate-on-scroll">
-          <!-- Substitua pela sua imagem ilustrativa -->
           <img src="./assets/Design TECAP/Fotos/Homem.png" class="img-fluid d-block w-100" alt="Ilustração de automação" style="vertical-align: bottom;" />
         </div>
       </div>
@@ -505,7 +508,6 @@
           <a href="./portaria.html" class="btn btn-outline-tecap mt-3" aria-label="Leia a portaria na íntegra">Leia a portaria</a>
         </div>
         <div class="col-lg-6 order-lg-1 text-center animate-on-scroll">
-          <!-- Substitua pela sua imagem -->
           <img src="./assets/Design TECAP/Fotos/Mulher.webp" alt="Legislação" class="img-fluid d-block w-100" style="vertical-align: bottom;" />
         </div>
       </div>
@@ -582,7 +584,7 @@
     </div>
   </section>
 
-  <!-- ===== ORÇAMENTO (Netlify Forms) ===== -->
+  <!-- ===== ORÇAMENTO (Netlify Forms com fetch) ===== -->
   <section id="orcamento" class="section-padding bg-tecap-gray">
     <div class="container">
       <div class="row justify-content-center animate-on-scroll">
@@ -590,7 +592,7 @@
           <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm position-relative">
             <h3 class="fw-bold text-center mb-4 text-tecap-dark">Preencha o formulário e saiba mais</h3>
 
-            <!-- ATENÇÃO: data-netlify="true" é obrigatório -->
+            <!-- ATENÇÃO: data-netlify="true" ainda é necessário para o Netlify reconhecer o formulário -->
             <form id="formOrcamento" name="contato" method="POST" data-netlify="true" netlify-honeypot="website" class="needs-validation" novalidate autocomplete="off">
               <!-- Honeypot (Netlify) -->
               <div class="honeypot-field">
@@ -740,13 +742,13 @@
       });
 
       // ==========================================
-      // ASSISTENTE DE AJUDA (versão estável)
+      // ASSISTENTE DE AJUDA
       // ==========================================
       const helpToggle = document.getElementById('helpToggle');
       const helpPanel = document.getElementById('helpPanel');
 
       helpToggle.addEventListener('click', function(e) {
-        e.stopPropagation(); // Evita conflitos de clique
+        e.stopPropagation();
         helpPanel.classList.toggle('open');
         const isOpen = helpPanel.classList.contains('open');
         this.innerHTML = isOpen ? '<i class="bi bi-x-lg"></i>' : '<i class="bi bi-chat-dots-fill"></i>';
@@ -755,7 +757,6 @@
         }
       });
 
-      // Fecha o painel se clicar fora, com mais segurança
       document.addEventListener('click', function(e) {
         const isClickInside = helpPanel.contains(e.target) || helpToggle.contains(e.target);
         if (!isClickInside && helpPanel.classList.contains('open')) {
@@ -798,47 +799,76 @@
       });
 
       // ==========================================
-      // FORMULÁRIO (Netlify Forms)
+      // FORMULÁRIO – ENVIO VIA FETCH (AJAX) + ANIMAÇÃO
       // ==========================================
       const form = document.getElementById('formOrcamento');
+      const spinnerOverlay = document.getElementById('spinnerOverlay');
+      const submitBtn = document.getElementById('submitBtn');
 
       form.addEventListener('submit', function(e) {
-        // Honeypot
+        e.preventDefault(); // Impede o recarregamento da página
+
+        // --- 1. Honeypot ---
         const honeypot = document.getElementById('website');
         if (honeypot.value.length > 0) {
-          e.preventDefault();
           showToast('Acesso negado', 'Submissão bloqueada por segurança.', 'error');
           return;
         }
 
-        // Validação HTML5
+        // --- 2. Validação HTML5 ---
         if (!form.checkValidity()) {
-          e.preventDefault();
           e.stopPropagation();
           form.classList.add('was-validated');
           return;
         }
 
-        // Mostra spinner (opcional, pois o Netlify redireciona)
-        const btn = document.getElementById('submitBtn');
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Enviando...';
-        btn.disabled = true;
+        // --- 3. Coletar dados do formulário ---
+        const formData = new FormData(form);
+        // Adiciona o campo obrigatório do Netlify Forms
+        formData.append('form-name', 'contato');
 
-        // O Netlify Forms faz o envio real.
-        // Se quiser um feedback visual, podemos restaurar após um tempo (fallback)
-        setTimeout(() => {
-          btn.innerHTML = originalText;
-          btn.disabled = false;
-        }, 10000);
+        // --- 4. Mostrar animação de envio (spinner) ---
+        spinnerOverlay.classList.add('active');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
 
-        // Evento para Google Analytics
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'form_submit', {
-            'event_category': 'Contato',
-            'event_label': 'Netlify Forms'
-          });
-        }
+        // --- 5. Enviar via fetch para o endpoint do Netlify Forms ---
+        fetch('/', {
+          method: 'POST',
+          body: formData,
+        })
+        .then(response => {
+          // O Netlify Forms retorna 200 ou 302 em caso de sucesso
+          if (response.ok) {
+            // Sucesso: exibir toast e resetar formulário
+            showToast('✅ Sucesso!', 'Sua mensagem foi enviada com sucesso. Entraremos em contato em breve.', 'success');
+            form.reset();
+            form.classList.remove('was-validated');
+            document.getElementById('formTimestamp').value = Date.now();
+            charCount.textContent = '0 / 1000 caracteres';
+            charCount.style.color = '#6c757d';
+            // Evento GA
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'form_submit', {
+                'event_category': 'Contato',
+                'event_label': 'Netlify Forms (AJAX)'
+              });
+            }
+          } else {
+            // Erro na resposta
+            showToast('� Erro', 'Falha ao enviar. Tente novamente mais tarde.', 'error');
+          }
+        })
+        .catch(error => {
+          console.error('Erro no envio:', error);
+          showToast('❌ Erro', 'Falha na conexão com o servidor. Verifique sua internet.', 'error');
+        })
+        .finally(() => {
+          // --- 6. Remover animação e reativar botão ---
+          spinnerOverlay.classList.remove('active');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+        });
       });
 
       // ==========================================
@@ -877,11 +907,11 @@
 
       animElements.forEach(el => observer.observe(el));
 
-      console.log('✅ TECAP pronto para Netlify com Forms, SEO e acessibilidade');
+      console.log('✅ TECAP com envio via AJAX (sem recarregar)');
       console.log('📧 Configure as notificações do formulário no painel do Netlify');
       console.log('📊 Substitua G-XXXXXXXXXX pelo seu ID do Google Analytics');
       console.log('🤖 Assistente de ajuda funcionando corretamente');
-      console.log('📞 Telefone agora aceita apenas números (10-11 dígitos)');
+      console.log('📞 Telefone: apenas números (10-11 dígitos)');
     })();
   </script>
 </body>
